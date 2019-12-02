@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "502462300363",
+    "firebase_url": "https://timetable-generator-ff06b.firebaseio.com",
+    "project_id": "timetable-generator-ff06b",
+    "storage_bucket": "timetable-generator-ff06b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502462300363:android:d45c7938031d5d38349b4e",
+        "android_client_info": {
+          "package_name": "com.threeonefour.timetablegenerator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502462300363-smd8n8p38g93ti6nne0r4bot4gnqomd3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.threeonefour.timetablegenerator",
+            "certificate_hash": "22b817644d169819078343dad28d047d504093d2"
+          }
+        },
+        {
+          "client_id": "502462300363-lfflb7ip26gict9e7gu77cr0rg7onq7m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.threeonefour.timetablegenerator",
+            "certificate_hash": "3f93e21117e533e29a01f46fe7105d367d5adcad"
+          }
+        },
+        {
+          "client_id": "502462300363-r4mhoth9dah50a69o6mkm084tnkobj2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx98HUHVeKVoLeBJD1VUfKnwYwyh-yLJQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "502462300363-r4mhoth9dah50a69o6mkm084tnkobj2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
