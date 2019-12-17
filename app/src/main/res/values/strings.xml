@@ -19,5 +19,16 @@
         <item>Big Data</item>
     </string-array>
 
+    <string-array name="Subjects">
+        <item>Sub lolol</item>
+        <item>Sub lelelel</item>
+        <item>Subject 3</item>
+        <item>Another Subject</item>
+        <item>Computer Systems</item>
+    </string-array>
+
+<!--    <integer name="btnplusview">1</integer>-->
+<!--    <integer name="btnpluspos">2</integer>-->
+
 
 </resources>

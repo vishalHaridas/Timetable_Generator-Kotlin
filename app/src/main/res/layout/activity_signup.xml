@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp">
+    tools:context=".SignUpActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/logoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -40,7 +40,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/detailsText"
+                android:id="@+id/curSubText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -65,13 +65,33 @@
                 android:paddingEnd="15dp"
                 android:textSize="20sp" />
 
+            <TextView
+                android:id="@+id/selectCourseTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="5dp"
+                android:text="Select Course"
+                android:textSize="20sp" />
+
             <Spinner
                 android:id="@+id/courseSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:id="@+id/selectMajorTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="40dp" />
+                android:layout_marginBottom="5dp"
+                android:text="Select Major"
+                android:textSize="20sp" />
 
             <Spinner
                 android:id="@+id/majorSpinner"
@@ -150,7 +170,7 @@
                 android:textSize="20sp" />
 
             <Button
-                android:id="@+id/createSubmitButton"
+                android:id="@+id/registerButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="65dp"

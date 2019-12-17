@@ -1,13 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<RelativeLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".SubjectSelectionActivity">-->
+
+
+<!--    <Button-->
+<!--        android:id="@+id/subSelBackButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="40dp"-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        android:text="Back"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/subSelTextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="40dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:fontFamily="@font/montserrat"-->
+<!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--        android:textSize="45sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_below="@id/subSelBackButton"-->
+<!--        android:text="Subject Setup" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/subSelSubTextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/subSelTextView"-->
+<!--        android:layout_marginStart="40dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:fontFamily="@font/montserrat"-->
+<!--        android:text="Select the subjects you have or will complete"-->
+<!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--        android:textColor="#707070"-->
+<!--        android:textSize="25sp" />-->
+
+<!--    <ListView-->
+<!--        android:id="@+id/subListView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@id/subSelSubTextView"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="40dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginEnd="40dp"-->
+<!--        android:layout_marginBottom="0dp"-->
+<!--        android:scrollbars="vertical" />-->
+
+
+
+
+<!--</RelativeLayout>-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SubjectSelection">
+    tools:context=".SubjectSelectionActivity">
+
 
     <Button
-        android:id="@+id/backButton"
+        android:id="@+id/subSelBackButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -16,54 +80,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
+    <TextView
+        android:id="@+id/subSelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subSelBackButton"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Subject Setup"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subSelBackButton" />
+
+    <TextView
+        android:id="@+id/subSelSubTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subSelTextView"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Select the subjects you have or will complete"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#707070"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subSelTextView" />
+
+    <ListView
+        android:id="@+id/subListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="75dp"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="0dp"
+        android:layout_below="@id/subSelSubTextView"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/subSelButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subSelSubTextView" />
 
-        <LinearLayout
-            android:id="@+id/lv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <Button
+        android:id="@+id/subSelButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="45dp"
+        android:text="Done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="24dp"
-                android:fontFamily="@font/montserrat"
-                android:text="Subject Setup"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textSize="45sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/descriptionText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:fontFamily="@font/montserrat"
-                android:text="Select the subjects you have or will complete"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/GeneralText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="24dp"
-                android:fontFamily="@font/montserrat"
-                android:text="General"
-                android:textColor="#000000"
-                android:textSize="30sp" />
-
-
-        </LinearLayout>
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
