@@ -59,7 +59,10 @@ class SubjectSelectionAdapter(private val context: Context, subjectArrayList: Ar
 
         holder.tvAnimal!!.setText(subjectArrayList[position].getsubName())
 
+        val subName: String = subjectArrayList[position].getsubName();
         holder.checkBox!!.isChecked = subjectArrayList[position].getSelects()
+        holder.checkBox!!.setTag(R.integer.btnplusview, convertView)
+        holder.checkBox!!.tag = position
 
         holder.checkBox!!.setTag(R.integer.btnplusview, convertView)
         holder.checkBox!!.tag = position
@@ -67,6 +70,8 @@ class SubjectSelectionAdapter(private val context: Context, subjectArrayList: Ar
             val tempview = holder.checkBox!!.getTag(R.integer.btnplusview) as View
             val tv = tempview.findViewById(R.id.subNameTextView) as TextView
             val pos = holder.checkBox!!.tag as Int
+            Toast.makeText(context, "Checkbox $pos clicked! with subCode: $subName", Toast.LENGTH_SHORT).show()
+
 
             if (subjectArrayList[pos].getSelects()) {
                 subjectArrayList[pos].setSelects(false)

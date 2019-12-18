@@ -119,13 +119,13 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/subSelButton"
+        app:layout_constraintBottom_toTopOf="@+id/subSelDoneButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subSelSubTextView" />
 
     <Button
-        android:id="@+id/subSelButton"
+        android:id="@+id/subSelDoneButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"

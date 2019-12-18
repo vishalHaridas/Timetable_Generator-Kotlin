@@ -24,7 +24,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/montserrat"
-        android:text="Loading Data.."
+        android:text="Loading Data..."
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -40,14 +40,14 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/montserrat"
-        android:text="Ongoing Subjects"
+        android:text="Setup your subjects"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
 
     <Button
-        android:id="@+id/subButton"
+        android:id="@+id/chooseSubButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"

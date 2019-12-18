@@ -1,5 +1,6 @@
 package com.threeonefour.timetablegenerator
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +10,12 @@ import com.google.firebase.database.*
 import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.threeonefour.timetablegenerator.SubjectSelectionActivity.Companion.COURSE_SUBJECT_LIST
+import kotlinx.android.synthetic.main.activity_dashboard.*
 
 
 //TODO: Course List with subject object
@@ -21,17 +27,20 @@ class SubjectSelectionActivity : AppCompatActivity() {
         var COURSE_SUBJECT_LIST: ArrayList<Subject> = ArrayList<Subject>()
     }
 
+    private var mDatabaseReference: DatabaseReference? = null
+    private var mDatabase: FirebaseDatabase? = null
+    private var mAuth: FirebaseAuth? = null
 
 
 //    private var subList : ArrayList<Model>? = null
     private var subArrayList: ArrayList<Model>? = null
     private var lv: ListView? = null
-//    private var modelArrayList: ArrayList<Model>? = null
+    private var doneButton: Button? = null
     private var subSelAdapter: SubjectSelectionAdapter? = null
-    private val subList = arrayOf("Lion", "Tiger", "Leopard", "Cat", "Tiger", "Leopard", "Cat", "Tiger", "Leopard", "Cat", "Tiger", "Leopard", "Cat", "Tiger", "Leopard", "Cat", "Tiger", "Leopard", "Cat")
 
-    private lateinit var _db: DatabaseReference
-    private lateinit var dbCourseList: MutableList<Course>
+
+//    private lateinit var _db: DatabaseReference
+//    private lateinit var dbCourseList: MutableList<Course>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,70 +51,52 @@ class SubjectSelectionActivity : AppCompatActivity() {
 
     private fun initialise(){
 
-        _db = FirebaseDatabase.getInstance().getReference("Courses/COBSC01")
-        dbCourseList = mutableListOf()
+//        _db = FirebaseDatabase.getInstance().getReference("Student/COBSC01")
+//        dbCourseList = mutableListOf()
 
-        lv = findViewById(R.id.subListView) as ListView
+        lv = findViewById<ListView>(R.id.subListView)
+        doneButton = findViewById<Button>((R.id.subSelDoneButton))
 
         subArrayList = getModel(false)
         subSelAdapter = SubjectSelectionAdapter(this, subArrayList!!)
         lv!!.adapter = subSelAdapter
 
-        _db.addValueEventListener(object: ValueEventListener{
-            override fun onCancelled(p0: DatabaseError) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
 
-            override fun onDataChange(p0: DataSnapshot) {
-                if (p0.exists()){
+        mDatabase = FirebaseDatabase.getInstance()
+        mDatabaseReference = mDatabase!!.reference!!.child("Students")
+        mAuth = FirebaseAuth.getInstance()
+        val userId = mAuth!!.currentUser!!.uid
+        val currentUserDb = mDatabaseReference!!.child(userId)
+        Log.d("CURRENT USER", "$userId");
 
-                    val coreSubsList: DataSnapshot = p0.child("core");
-                    val gedSubsList: DataSnapshot = p0.child("gedSubs");
-                    val majorSubsList: DataSnapshot = p0.child("major/MAMGD01/elective")
-
-                    for (sub in coreSubsList.children){
-                        val subCode: String? = sub.key;
-                        val subName: String? = sub.child("name").value as String?
-                        val subPrereqList: DataSnapshot = sub.child("prereq")
-
-                        var prereqList: ArrayList<String>? = ArrayList<String>()
-
-                        for (prereq in subPrereqList.children){
-                            val prereqID: String? = prereq.value as String?
-                            if (prereqID != null) {
-                                prereqList?.add(prereqID)
-                            }
-//                            Log.d("DATABASE COURSE PRE SUB", "subcode: $subCode, prereq: $prereqID")
-                        }
-
-                        var subObject: Subject = Subject("$subCode","$subName", false)
-                        subObject.prereqs = prereqList
-
-                        COURSE_SUBJECT_LIST.add(subObject);
-
-//                        Log.d("DATABASE COURSE SUB", "subcode: ${subObject.code}, prereq: ${subObject.prereqs}")
-                    }
-                    for (sub in gedSubsList.children){
-                        val subDetails: DataSnapshot = sub;
-//                        Log.d("DATABASE GED SUB", "$subDetails")
-                    }
-                    for (sub in majorSubsList.children){
-                        val subDetails: DataSnapshot = sub;
-//                        Log.d("DATABASE MAJOR SUB", "$subDetails")
+        doneButton!!.setOnClickListener {
+//                    }
+            var counter = 0
+            currentUserDb.child("completedSubs").removeValue()
+                for (i in 0 until SubjectSelectionAdapter.public_subjectArrayList!!.size){
+                    if (SubjectSelectionAdapter.public_subjectArrayList!!.get(i).isSelected) {
+                        val testString = SubjectSelectionAdapter.public_subjectArrayList!!.get(i).subName
+                        currentUserDb.child("completedSubs").child("$counter").setValue(testString)
+                        counter++;
                     }
                 }
             }
 
-        })
+
+
+
+//        subArrayList = getModel(false)
+//        subSelAdapter = SubjectSelectionAdapter(this, subArrayList!!)
+//        lv!!.adapter = subSelAdapter
     }
 
     private fun getModel(isSelect: Boolean): ArrayList<Model> {
         val list = ArrayList<Model>()
-        for (i in subList.indices) {
+        for (i in COURSE_SUBJECT_LIST.indices) {
 
             val model = Model()
             model.setSelects(isSelect)
-            model.setsubName(subList[i])
+            model.setsubName(COURSE_SUBJECT_LIST[i].code)
             list.add(model)
         }
         return list

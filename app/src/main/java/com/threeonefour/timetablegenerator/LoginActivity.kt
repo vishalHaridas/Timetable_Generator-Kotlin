@@ -96,7 +96,6 @@ class LoginActivity : AppCompatActivity() {
     private fun updateUI() {
         val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivity(intent)
         finish();
     }
