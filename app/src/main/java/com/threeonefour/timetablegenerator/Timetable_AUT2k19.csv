@@ -1,0 +1,411 @@
+ACCY111,L,A,KV15-L-Theatre,Al Hares O,Sunday,10:30,12:30
+ACCY111,L,B,KV14-125,Ronak Z.,Sunday,10:30,12:30
+ACCY111,T,A,KV14-304,Al Hares O,Sunday,14:30,16:30
+ACCY111,T,B,KV14-125,Ghani Y,Monday,10:30,12:30
+ACCY111,T,C,KV14-207,Kaur A,Monday,13:30,15:30
+ACCY111,T,D,KV14-304,Ghani Y,Tuesday,10:30,12:30
+ACCY111,T,E,KV14-210,Kaur A,Tuesday,14:30,16:30
+ACCY111,T,F,KV14-306,Ghani Y,Wednesday,10:30,12:30
+ACCY111,T,G,KV14-209,Ghani Y,Thursday,08:30,10:30
+ACCY111,T,H,KV14-201,Ghani Y,Thursday,13:30,15:30
+ACCY112,L,1,KV15-L-Theatre,Lutfi M,Sunday,08:30,10:30
+ACCY112,T,A,KV15-221,Kaur A,Sunday,10:30,12:30
+ACCY112,T,B,KV14-210,Kaur A,Monday,10:30,12:30
+ACCY200,L,1,KV15-117,Ronak Z.,Tuesday,08:30,10:30
+ACCY200,T,A,KV14-125,Tchantchane N,Sunday,13:30,15:30
+ACCY200,T,B,KV14-306,Ghani Y,Tuesday,14:30,16:30
+ACCY200,T,C,KV14-202,Ghani Y,Wednesday,08:30,10:30
+ACCY200,T,D,KV14-209,Ghani Y,Thursday,10:30,12:30
+ACCY201,L,1,KV14-125,Ronak Z.,Tuesday,10:30,12:30
+ACCY201,T,1,KV15-221,Ronak Z.,Sunday,08:30,10:30
+ACCY211,L,1,KV14-G02,Lutfi M,Sunday,10:30,12:30
+ACCY211,T,A,KV15-223,Lutfi M,Sunday,14:30,16:30
+ACCY211,T,B,KV15-223,Kaur A,Monday,08:30,10:30
+ACCY211,T,C,KV14-205,Kaur A,Thursday,08:30,10:30
+ACCY312,L,1,KV15-121,Gupta N,Thursday,14:30,16:30
+ACCY312,T,A,KV14-208,Tchantchane N,Sunday,10:30,12:30
+ACCY312,T,B,KV15-110,Gupta N,Wednesday,10:30,12:30
+ACCY312,T,C,KV14-307,Gupta N,Thursday,10:30,12:30
+ACCY342,L,1,KV14-125,Lutfi M,Monday,13:30,15:30
+ACCY342,T,A,KV14-125,Lutfi M,Monday,15:30,17:30
+ACCY342,T,B,KV15-223,Lutfi M,Wednesday,14:30,16:30
+ARA101,L,1,KV14-302,El Sobkey N,Monday,13:30,14:30
+ARA101,T,A,KV14-205,El Sobkey N,Sunday,08:30,11:00
+ARA101,T,B,KV14-206,El Sobkey N,Thursday,13:30,15:30
+ARA102,L,1,KV14-203,Freiwat K,Monday,16:00,17:00
+ARA102,T,A,KV14-204,Freiwat K,Monday,13:30,16:00
+ARA102,T,B,KV14-210,Freiwat K,Wednesday,15:30,17:30
+ART035,L,1,KV15-L-Theatre,Ajala I,Wednesday,10:30,12:30
+ART035,T,A,KV14-203,Al Khataw F,Sunday,13:30,15:30
+ART035,T,B,KV14-203,Sekhri E,Tuesday,13:30,15:30
+ART035,T,C,KV14-307,Sekhri E,Wednesday,08:30,10:30
+ART035,T,D,KV14-205,Sekhri E,Wednesday,14:30,16:30
+BCM110,L,1,KV14-209,Mallory M,Tuesday,10:30,12:30
+BCM110,L,2,KV14-209,Mallory M,Tuesday,13:30,15:30
+BCM111,L,1,KV15-110,Burns T,Monday,10:30,12:30
+BCM111,L,2,KV15-110,Burns T,Monday,13:30,15:30
+CHEM103,C,A,KV5-FTC Lab,Yousuf M,Wednesday,15:30,18:30
+CHEM103,C,B,KV5-FTC Lab,Yousuf M,Thursday,08:30,11:30
+CHEM103,L,1,KV14-201,Wilkinson S,Monday,08:30,10:30
+CHEM103,T,1,KV14-G09,Wilkinson S,Wednesday,10:30,12:30
+CIVIL311,L,1,KV14-307,Jaafar K,Tuesday,13:30,15:30
+CIVIL311,T,A,KV14-202,Saidarakath T,Wednesday,10:30,12:30
+CIVIL311,T,B,KV14-204,Saidarakath T,Thursday,10:30,12:30
+CIVIL322,C,1,KV14-G01 - Concrete Lab,Khan S; Mahmoud A.,Monday,13:30,15:30
+CIVIL322,L,1,KV15-221,Gouda H,Thursday,13:30,15:30
+CIVIL322,T,1,KV14-210,Gouda H,Monday,15:30,17:30
+CIVIL352,C,1,V14-G01 - Concrete Lab,Saidarakath T,Sunday,10:30,12:30
+CIVIL352,L,1,KV14-209,Amir S,Tuesday,08:30,10:30
+CIVIL352,T,1,KV15-110,Amir S,Wednesday,08:30,10:30
+CIVL361,C,1,KV14-G01 - Concrete Lab,Saidarakath T,Sunday,13:30,15:30
+CIVL361,L,1,KV14-209,Wilkinson S,Tuesday,15:30,17:30
+CIVL361,T,1,KV14-209,Wilkinson S,Thursday,15:30,17:30
+COMM101,L,1,KV15-121,Lasrado F,Sunday,13:30,15:30
+COMM101,T,A,KV14-202,Lasrado F,Tuesday,11:30,12:30
+COMM101,T,B,KV15-221,Lasrado F,Tuesday,13:30,14:30
+COMM101,T,C,KV14-204,Baghestani M,Wednesday,09:30,10:30
+COMM101,T,D,KV14-208,Baghestani M,Thursday,09:30,10:30
+COM121,L,1,KV15-121,Kaul N,Sunday,08:30,10:30
+COM121,T,A,KV14-210,Kaul N,Sunday,10:30,12:30
+COM121,T,B,KV14-208,Kaul N,MOnday,14:30,16:30
+COM121,T,C,KV14-205,Kaul N,Tuesday,08:30,10:30
+COM121,T,D,KV14-210,Tajali B,Wednesday,08:30,10:30
+COMM331,L,1,KV15-117,Zakaria N,Thursday,10:30,12:30
+COMM331,T,A,KV14-201,Zakaria N,Monday,14:30,16:30
+COMM331,T,B,KV14-204,Khurshid S.,Wednesday,10:30,12:30
+COMM331,T,C,KV15-110,Khurshid S.,Thursday,08:30,10:30
+COMM331,T,D,KV14-202,Zakaria N,Thursday,13:30,15:30
+CSCI236,C,A,KV5-122 - Game Development,Majed S,Sunday,10:30,12:30
+CSCI236,C,B,KV5-122 - Game Development,Majed S,Thursday,08:30,10:30
+CSCI236,L,1,KV14-201,Lim H.C.,Monday,10:30,12:30
+CSCI236,T,1,KV14-304,Lim H.C.,Tuesday,13:30,15:30
+CSCI251,C,A,KV5-124,Toth T,Tuesday,10:30,12:30
+CSCI251,C,B,KV5-126,Toth T,Thursday,13:30,15:30
+CSCI251,L,1,KV14-201,Tchantchane A,Wednesday,10:30,12:30
+CSCI251,T,1,KV14-201,Tchantchane A,Wednesday,08:30,10:30
+CSCI262,C,1,KV5-103 - Network Lab,Ameen J,Wednesday,15:30,17:30
+CSCI262,L,1,KV5-103 - Network Lab,Khelalfa H,MOnday,13:30,15:30
+CSCI262,T,1,KV5-103 - Network Lab,Khelalfa H,Tuesday,15:30,17:30
+CSCI291,C,A,KV5-121,Afsari K,Tuesday,09:30,11:30
+CSCI291,C,B,KV5-126,Afsari K,Thursday,09:30,11:30
+CSCI291,L,1,KV14-307,Al Khatib O,Sunday,10:30,12:30
+CSCI291,T,A,KV14-202,Al Khatib O,Monday,15:30,17:30
+CSCI291,T,B,KV14-201,Al Khatib O,Thursday,11:30,13:30
+CSCI346,C,1,KV5-122 - Game Development,Majed S,Sunday,13:30,15:30
+CSCI346,L,1,KV5-122 - Game Development,Lim H.C.,Monday,08:30,10:30
+CSCI346,T,1,KV5-122 - Game Development,Lim H.C.,Thursday,14:30,16:30
+CSCI368,C,1,KV5-103 - Network Lab,Benharref A,Tuesday,13:30,15:30
+CSCI368,L,1,KV5-103 - Network Lab,Benharref A,Tuesday,12:30,12:30
+CSCI369,C,A,KV5-103 - Network Lab,Toth T,Sunday,10:30,12:30
+CSCI369,C,B,KV5-103 - Network Lab,Toth T,Thursday,15:30,17:30
+CSCI369,L,1,KV14-204,El Barachi M,Thruday,08:30,10:30
+CSCI369,T,1,KV14-202,El Barachi M,Thursday,10:30,12:30
+CSIT111,C,A,KV5-126,Afsari K,Monday,13:30,15:30
+CSIT111,C,B,KV5-123,Afsari K,Wednesday,10:30,12:30
+CSIT111,C,C,KV5-124,Afsari K,Thursday,13:30,15:30
+CSIT111,L,1,KV14-211,Tchantchane A,Wednesday,14:30,16:30
+CSIT111,T,A,KV14-G09,Hajri S,Sunday,08:30,10:30
+CSIT111,T,B,KV14-125,Tchantchane A,Monday,08:30,10:30
+CSIT113,L,1,KV15-121,Mathew S,Wednesday,08:30,10:30
+CSIT113,L,2,KV15-121,Mathew S,Thursday,08:30,10:30
+CSIT113,T,A,KV14-204,Mathew S,Sunday,08:30,10:30
+CSIT113,T,B,KV14-G02,Hajri S,Tuesday,10:30,12:30
+CSIT113,T,C,KV14-211,Hajri S,Tuesday,13:30,15:30
+CSIT113,T,D,KV14-307,Hajri S,Wednesday,14:30,16:30
+CSIT114,C,A,KV5-126,Riaz H,Monday,10:30,12:30
+CSIT114,C,B,KV5-126,Riaz H,TUesday,15:30,17:30
+CSIT114,L,1,KV14-125,Khan Z,Thursday,10:30,12:30
+CSIT114,T,A,KV14-208,Khan Z,Sunday,13:30,14:30
+CSIT114,T,B,KV14-307,Khan Z,Wednesday,10:30,11:30
+CSIT115,C,A,KV5-132 - Database Lab,Ameen J,Monday,08:30,10:30
+CSIT115,C,B,KV5-124,Karakkal L,Tuesday,13:30,15:30
+CSIT115,C,C,KV5-132 - Database Lab,Ameen J,Tuesday,13:30,15:30
+CSIT115,C,D,KV5-132 - Database Lab,Ameen J,Wednesday,08:30,10:30
+CSIT115,C,E,KV5-132 - Database Lab,Ameen J,Thursday,08:30,10:30
+CSIT115,C,F,KV5-132 - Database Lab,Ameen J,Thruday,15:30,17:30
+CSIT115,L,A,KV15-121,Oroumchian F,Tuesday,10:30,12:30
+CSIT115,L,B,KV15-121,Oroumchian F,Tuesday,13:30,15:30
+CSIT115,T,A,KV14-G02,Oroumchian F,Sunday,13:30,15:30
+CSIT115,T,B,KV15-223,Karakkal L,Tuesday,08:30,10:30
+CSIT115,T,C,KV14-205,Karakkal L,Thursday,13:30,15:30
+CSIT121,C,A,KV5-126,Hajri S,Sunday,10:30,12:30
+CSIT121,C,B,KV5-126,Hajri S,Tuesday,08:30,10:30
+CSIT121,C,C,KV5-121,Hajri S,Wednesday,08:30,10:30
+CSIT121,T,1,KV14-301,Benharref A,Monday,10:30,12:30
+CSIT121,T,2,KV14-301,Benharref A,Wednesday,10:30,12:30
+CSIT128,C,A,KV5-124,Majed S,Monday,13:30,15:30
+CSIT128,C,B,KV5-126,Majed S,Tuesday,13:30,15:30
+CSIT128,C,C,KV5-123,Majed S,Thursday,13:30,15:30
+CSIT128,L,1,KV14-301,Mathew S,Tuesday,08:30,10:30
+CSIT128,T,A,KV5-126,Hameed Z,Sunday,15:30,17:30
+CSIT128,T,B,KV5-132 - Database Lab,Hameed Z,Monday,15:30,17:30
+CSIT128,T,C,KV5-123,Mathew S,Thursday,10:30,12:30
+CSIT212,C,A,KV5-103 - Network Lab,Toth T,Sunday,13:30,15:30
+CSIT212,C,B,KV5-103 - Network Lab,Toth T,Sunday,15:30,17:30
+CSIT212,C,C,KV5-103 - Network Lab,Toth T,Tuesday,08:30,10:30
+CSIT212,L,1,KV14-211,Mathew S,Sunday,10:30,12:30
+CSIT212,T,A,KV5-103 - Network Lab,Hajri S,Monday,08:30,10:30
+CSIT212,T,B,KV5-103 - Network Lab,Hajri S,Wednesday,10:30,12:30
+CSIT214,L,1,KV14-G02,Yusof S.,Sunday,08:30,10:30
+CSIT214,T,A,KV14-202,Yusof S.,Monday,10:30,12:30
+CSIT214,T,B,KV14-202,Masalma J,Tuesday,15:30,17:30
+CSIT214,T,C,KV14-208,Masalma J,Thursday,15:30,17:30
+CSIT242,C,1,KV5-122 - Game Development,Benharref A,Wednesday,08:30,10:30
+CSIT242,L,1,KV5-122 - Game Development,Benharref A,Monday,15:30,17:30
+CSIT314,L,1,KV14-211,El Barachi M,Thursday,13:30,15:30
+CSIT314,T,1,KV14-211,El Barachi M,Thursday,15:30,17:30
+CSIT321,L,1,KV14-G09,Khan Z;El Barachi M,Wednesday,14:30,17:30
+ECON100,L,A,KV14-G09,Kaul N,Tuesday,12:30,14:30
+ECON100,L,B,KV15-L-Theatre,Shirazi A,Tuesday,13:30,15:30
+ECON100,T,A,KV14-201,Kaur A,Sunday,13:30,14:30
+ECON100,T,B,KV14-209,Kaul N,Monday,13:30,14:30
+ECON100,T,C,KV14-209,Shirazi A,Monday,15:30,16:30
+ECON100,T,D,KV14-203,Kaur A,Tuesday,09:30,10:30
+ECON100,T,E,KV14-203,Kaur A,Tuesday,10:30,11:30
+ECON100,T,F,KV14-203,Shirazi A,Tuesday,15:30,16:30
+ECON100,T,G,KV14-125,Kaur A,Thursday,13:30,14:30
+ECON100,T,H,KV15-223,Kaur A,Thursday,14:30,15:30
+ECON216,L,1,KV15-121,Gerth F,Wednesday,10:30,12:30
+ECON216,T,A,KV14-208,Gerth F,Monday,16:30,17:30
+ECON216,T,B,KV14-209,Gerth F,Wednesday,15:30,16:30
+ECON339,L,1,KV15-121,Gerth F,Monday,10:30,12:30
+ECON339,T,A,KV5-123,Gerth F,Sunday,14:30,16:30
+ECON339,T,B,KV5-124,Gopakumar A,Monday,16:30,10:30
+ECON339,T,C,KV5-126,Gopakumar A,Wednesday,08:30,16:30
+ECTE202,C,A,KV5-139 - Circuit Lab,Copiaco A,Monday,10:30,12:30
+ECTE202,C,B,KV5-139 - Circuit Lab,Copiaco A,Thursday,14:30,16:30
+ECTE202,L,1,KV14-302,Abdulaziz N,Monday,08:30,10:30
+ECTE202,T,1,KV14-302,Abdulaziz N,Sunday,14:30,16:30
+ECTE233,C,A,KV5-139 - Circuit Lab,Qureshi A,Tuesday,08:30,11:30
+ECTE233,C,B,KV5-139 - Circuit Lab,Qureshi A,Thursday,08:30,11:30
+ECTE233,L,1,KV14-G02,Kennedy J,Monday,13:30,15:30
+ECTE233,T,1,KV14-205,Kennedy J,Tuesday,15:30,17:30
+ECTE250,C,1,KV5-139 - Circuit Lab,Copiaco A,Wednesday,08:30,11:30
+ECTE250,L,1,KV14-202,Malek M,Wednesday,14:30,16:30
+ECTE250,T,1,KV14-302,Malek M,Wednesday,16:30,17:30
+ECTE301,C,1,KV5-139 - Circuit Lab,El Khouly A,Tuesday,13:30,15:30
+ECTE301,L,1,KV14-211,Malek M,Tuesday,10:30,12:30
+ECTE301,T,1,KV14-211,El Khouly A,Tuesday,08:30,10:30
+ECTE324,C,1,KV5-G013 - Power Lab,Qureshi A,Tuesday,13:30,16:30
+ECTE324,L,1,KV14-202,Kennedy J,Sunday,10:30,12:30
+ECTE324,T,1,KV14-207,Kennedy J,Monday,10:30,12:30
+ECTE333,C,1,KV5-139 - Circuit Lab,Copiaco A,Sunday,14:30,17:30
+ECTE333,L/T,1,KV15-221,Al Khatib O,Monday,08:30,10:30
+ECTE350,C,1,KV5-139 - Circuit Lab,Afsari K;El Khouly A,Wednesday,14:30,17:30
+ECTE350,L,1,KV14-304,Rajamani H,Wednesday,10:30,12:30
+ECTE350,T,1,KV14-304,Rajamani H,Wednesday,08:30,10:30
+ECTE364,C,1,KV5-G013 - Power Lab,Qureshi A,Thursday,11:30,14:30
+ECTE364,L,1,KV14-202,Al Khatib O,Sunday,08:30,10:30
+ECTE364,T,1,KV15-223,Al Khatib O,Thursday,08:30,10:30
+ECTE401,C,1,KV5-139 - Circuit Lab,Copiaco A,Thursday,11:30,14:30
+ECTE401,L,1,KV14-302,Abdulaziz N,Sunday,08:30,10:30
+ECTE401,T,1,KV14-302,Abdulaziz N,Sunday,10:30,11:30
+ECTE412,C,A,KV5-G013 - Power Lab,El Khouly A,Thursday,08:30,11:30
+ECTE412,C,B,KV5-G013 - Power Lab,El Khouly A,Thursday,14:30,17:30
+ECTE412,L,1,KV15-223,Rajamani H,Tuesday,10:30,12:30
+ECTE412,T,1,KV14-208,Rajamani H,Tuesday,13:30,15:30
+ECTE423,C,1,KV5-G013 - Power Lab,El Khouly A,Sunday,08:30,11:30
+ECTE423,L,1,KV14-202,Kennedy J,Sunday,15:30,17:30
+ECTE423,T,1,KV15-221,Kennedy J,Wednesday,10:30,12:30
+ECTE451,L,1,KV14-306,Malek M,Wednesday,08:30,10:30
+ECTE458,L,1,KV14-302,Abdulaziz N,Wednesday,08:30,10:30
+ECTE482,C,A,KV5-102 - Physics Lab,Copiaco A,Monday,13:30,16:30
+ECTE482,C,B,KV5-102 - Physics Lab,Copiaco A,Thursday,08:30,11:30
+ECTE482,L,1,KV14-125,Malek M,Tuesday,08:30,10:30
+ECTE482,T,A,KV14-209,Malek M,Sunday,11:30,12:30
+ECTE482,T,B,KV14-210,Malek M,Sunday,13:30,14:30
+ENGG100,C,1,KV5-G013 - Power Lab,Copiaco A,Wednesday,14:30,16:30
+ENGG100,L,1,KV14-211,O'Driscoll C,Sunday,15:30,16:30
+ENGG100,T,1,KV5-G013 - Power Lab,O'Driscoll C,Monday,16:30,18:30
+ENGG102,C,A,KV5-102 - Physics Lab,Qureshi A,Monday,08:30,10:30
+ENGG102,C,B,KV5-102 - Physics Lab,Qureshi A,Monday,10:30,12:30
+ENGG102,C,C,KV5-102 - Physics Lab,Qureshi A,Wednesday,10:30,12:30
+ENGG102,C,D,KV5-102 - Physics Lab,Ahmed M,Wednesday,14:30,16:30
+ENGG102,L,1,KV14-302,Amir S,Tuesday,13:30,15:30
+ENGG102,T,A,KV14-307,Ahmed M,Monday,13:30,15:30
+ENGG102,T,B,KV15-221,Amir S,Monday,13:30,15:50
+ENGG102,T,C,KV14-205,Ahmed M,Thursday,10:30,12:30
+ENGG103,C,A,KV14-G01 - Concrete Lab,Yousuf M; Mahmoud A.,Monday,08:30,10:30
+ENGG103,C,B,KV14-G01 - Concrete Lab,Yousuf M; Mahmoud A.,monday,10:30,12:30
+ENGG103,C,C,KV14-G01 - Concrete Lab,Yousuf M; Mahmoud A.,Tuesday,15:30,17:30
+ENGG103,C,D,KV14-G01 - Concrete Lab,Yousuf M; Mahmoud A.,Thursday,13:30,15:30
+ENGG103,L,1,KV14-301,O'Driscoll C,Sunday,10:30,12:30
+ENGG103,T,A,KV14-205,O'Driscoll C,monday,15:30,16:30
+ENGG103,T,B,KV14-206,O'Driscoll C,Tuesday,08:30,09:30
+ENGG103,T,C,KV14-208,O'Driscoll C,Tuesday,09:30,10:30
+ENGG103,T,D,KV14-211,Yousuf M; Mahmoud A.,Thursday,11:30,12:30
+ENGG105,C,A,KV5-122 - Game Development,Saidarakath T; Mahmoud A.,Sunday,08:30,10:30
+ENGG105,C,B,KV5-122 - Game Development,Saidarakath T; Mahmoud A.,Wednesday,16:30,18:30
+ENGG105,C,C,KV5-122 - Game Development,Saidarakath T; Mahmoud A.,Thursday,16:30,18:30
+ENGG105,L,1,KV14-G02,Sikora K,Wednesday,08:30,10:30
+ENGG105,T,A,KV14-208,Saidarakath T; Mahmoud A,Tuesday,10:30,12:30
+ENGG105,T,B,KV14-203,Sikora K,Wednesday,14:30,16:30
+ENGG251,C,A,KV14-G07 Workshop Lab,Ahmed M,Tuesday,08:30,10:30
+ENGG251,C,B,KV14-G07 Workshop Lab,Ahmed M,Thursday,15:30,17:30
+ENGG251,L,1,KV14-202,Sikora K,monday,13:30,15:30
+ENGG251,T,1,KV14-204,Sikora K,Tuesday,10:30,12:30
+ENGG252,C,1,KV5-FTC Lab,Yousuf M,Wednesday,08:30,10:30
+ENGG252,L,1,KV14-205,Chacha M,Monday,10:30,12:30
+ENGG252,T,1,KV15-110,Chacha M,Monday,15:30,17:30
+ENVI030,L,1,KV14-301,Wilkinson S,Monday,13:30,15:30
+ENVI030,T,A,KV14-207,Wilkinson S,Monday,15:30,17:30
+ENVI030,T,B,KV14-201,Saidarakath T,Tuesday,08:30,10:30
+ENVI030,T,C,KV14-201,Saidarakath T,Tuesday,13:30,15:30
+ENVI030,T,D,KV14-204,Saidarakath T,Thursday,13:30,15:30
+FIN 111,L,1,KV15-117,Gupta N,Thursday,08:30,10:30
+FIN 111,T,A,KV14-208,Gopakumar A,Monday,13:30,14:30
+FIN 111,T,B,KV14-207,Gopakumar A,Tuesday,14:30,15:30
+FIN 111,T,C,KV14-306,Gopakumar A,Thursday,10:30,11:30
+FIN 111,T,D,KV14-209,Gopakumar A,Thursday,13:30,14:30
+FIN 222,L,1,KV14-201,Saleem K,Sunday,14:30,16:30
+FIN 222,T,A,KV14-201,Saleem K,Sunday,16:30,17:30
+FIN 222,T,B,KV14-304,Gopakumar A,Monday,14:30,15:30
+FIN 222,T,C,KV14-204,Saleem K,Wednesday,14:30,15:30
+FIN 226,L,1,KV14-G09,Venkatachalam R,Tuesday,14:30,16:30
+FIN 226,T,A,KV14-210,Gopakumar A,Tuesday,16:30,17:30
+FIN 226,T,B,KV14-206,Gopakumar A,Thursday,11:30,12:30
+FIN 241,L,1,KV14-202,Ramiah V,Thursday,16:30,18:30
+FIN 241,T,A,KV15-110,Ramiah V,Tuesday,13:30,14:30
+FIN 241,T,B,KV14-202,Ramiah V,Thursday,15:30,16:30
+FIN 324,L,1,KV15-117,Muhammad N,Monday,16:30,18:30
+FIN 324,T,A,KV14-201,Muhammad N,Monday,13:30,14:30
+FIN 324,T,B,KV14-210,Muhammad N,Tuesday,13:30,14:30
+FIN 351,L,1,KV15-L-Theatre,Muhammad N,Sunday,15:30,17:30
+FIN 351,T,A,KV14-210,Tchantchane N,Sunday,09:30,10:30
+FIN 351,T,B,KV14-202,Muhammad N,Sunday,14:30,15:30
+FIN 351,T,C,KV14-203,Muhammad N,Monday,11:30,12:30
+GED 020,T,A1,KV14-203,Hysaj A,Monday,13:30,15:30
+GED 020,T,B1,KV14-208,Hysaj A,Tuesday,15:30,17:30
+GED 020,T,A2,KV14-209,Stubbs E,Sunday,08:30,10:30
+GED 020,T,B2,KV14-209,Stubbs E,Wednesday,08:30,10:30
+GED 020,T,A3,KV15-110,Unal L,Tuesday,14:30,16:30
+GED 020,T,B3,KV14-306,Unal L,Thursday,14:30,16:30
+GED 020,T,A4,KV14-205,Hysaj A,Sunday,13:30,15:30
+GED 020,T,B4,KV14-201,Hysaj A,Wednesday,14:30,16:30
+GED 020,T,A6,KV15-223,Unal L,Monday,14:30,16:30
+GED 020,T,B6,KV14-306,Unal L,Wednesday,14:30,16:30
+GED 020,T,A7,KV14-208,Aslam F,Sunday,08:30,10:30
+GED 020,T,B7,KV14-210,Aslam F,Thursday,08:30,10:30
+GED 020,T,A8,KV14-209,Aslam F,Monday,10:30,12:30
+GED 020,T,A8,KV14-201,Aslam F,Tuesday,10:30,12:30
+GED 020,T,A9,KV14-204,Stubbs E,Sunday,10:30,12:30
+GED 020,T,B9,KV14-203,Stubbs E,Thursday,10:30,12:30
+GEDA010,T,A,KV14-206,Hysaj A,Monday,10:30,12:30
+GEDA010,T,B,KV14-302,Hysaj A,Monday,15:30,17:30
+GEDA010,T,C,KV14-210,Hysaj A,Tuesday,08:30,10:30
+GEDA010,T,D,KV14-207,Hysaj A,Thursday,10:30,12:30
+GEDB010,T,A,KV14-201,Hysaj A,Sunday,08:30,10:30
+GEDB010,T,B,KV14-211,Hysaj A,Thursday,08:30,10:30
+INE 301,L,1,KV14-G02,Watfa M,Wednesday,14:30,17:30
+INE 301,T,A,KV14-202,Hameed Z,Tuesday,10:30,11:30
+INE 301,T,B,KV14-209,Hameed Z,Wednesday,10:30,11:30
+MARK101,L,1,KV15-L-Theatre,Vel P,Monday,14:30,16:30
+MARK101,T,A,KV14-209,Vel P,Sunday,14:30,15:30
+MARK101,T,B,KV15-223,Vel P,MOnday,16:30,17:30
+MARK101,T,C,KV14-206,Baghestani M,Wednesday,11:30,12:30
+MARK101,T,D,KV14-125,Baghestani M,Wednesday,15:30,16:30
+MARK101,T,E,KV14-210,Baghestani M,Thursday,11:30,12:30
+MARK101,T,F,KV15-110,Baghestani M,Thursday,15:30,16:30
+MARK205,L,1,KV14-301,Nyadzayo M,Wednesday,15:30,17:30
+MARK205,T,A,KV14-307,Nyadzayo M,Tuesday,10:30,12:30
+MARK205,T,B,KV14-209,Nyadzayo M,Wednesday,11:30,12:30
+MARK301,L,1,KV15-117,Bhayani A,Tuesday,15:30,17:30
+MARK301,T,A,KV14-202,Bhayani A,Tuesday,14:30,15:30
+MARK301,T,B,KV14-208,Bhayani A,Wednesday,11:30,12:30
+MARK270,L,1,KV15-121,Onyia P,Sunday,15:30,17:30
+MARK270,T,A,KV15-110,Onyia P,Sunday,14:30,15:30
+MARK270,T,B,KV14-206,Onyia P,MOnday,15:30,16:30
+MARK270,T,C,KV15-221,Sharma V,Wednesday,08:30,09:30
+MARK270,T,D,KV15-221,Sharma V,Wednesday,09:30,10:30
+MARK310,L,1,KV15-117,Mustafa N,Thursday,15:30,17:30
+MARK310,T,1,KV15-117,Mustafa N,Thursday,17:30,18:30
+MARK343,L,1,KV14-304,Bhayani A,Thursday,13:30,15:30
+MARK343,T,A,KV15-221,Khurshid S,Monday,10:30,11:30
+MARK343,T,B,KV15-221,Bhayani A,Wednesday,16:30,17:30
+MARK343,T,C,KV14-206,Bhayani A,Thursday,10:30,11:30
+MATH060,L,A,KV15-L-Theatre,Tchantchane A,Sunday,13:30,15:30
+MATH060,L,B,KV14-G09,Tchantchane A,Thursday,10:30,12:30
+MATH060,T,A,KV14-207,Ahmed M,Monday,08:30,10:30
+MATH060,T,B,KV14-205,Choucair Z,Tuesday,10:30,12:30
+MATH060,T,C,KV15-223,Ahmed M,Wednesday,08:30,10:30
+MATH060,T,D,KV14-205,Ahmed M,Wednesday,10:30,12:30
+MATH060,T,E,KV14-207,Choucair Z,Thursday,15:30,17:30
+MATH070,L,1,KV14-301,Lo A,Thursday,15:30,17:30
+MATH070,T,A,KV14-204,Choucair Z,Monday,10:30,12:30
+MATH070,T,B,KV14-204,Choucair Z,Tuesday,15:30,17:30
+MATH141,L,A,KV14-G09,Lo A.,Sunday,13:30,15:30
+MATH141,L,B,KV14-202,Lo A.,Thursday,08:30,10:30
+MATH141,T,A,KV14-306,Lo A.,Monday,13:30,15:30
+MATH141,T,B,KV14-306,Choucair Z,Monday,15:30,17:30
+MATH141,T,C,KV14-210,Choucair Z,Wednesday,10:30,12:30
+MATH221,L,1,KV14-202,Khelalfa H,Monday,08:30,10:30
+MATH221,T,A,KV15-110,Khelalfa H,Tuesday,08:30,10:30
+MATH221,T,B,KV15-110,Choucair Z,Thursday,10:30,10:30
+STAT291,L,1,KV14-125,Lo A.,Sunday,08:30,10:30
+STAT291,T,A,KV15-223,El Khouly A,Sunday,13:30,14:30
+STAT291,T,B,KV14-208,El Khouly A,Thursday,13:30,14:30
+MATH291,L,1,KV14-301,Hussain K,Tuesday,13:30,15:30
+MATH291,T,A,KV15-110,Hussain K,Sunday,13:30,14:30
+MATH291,T,B,KV14-207,Choucair Z,Thursday,13:30,14:30
+MECH203,C,1,KV14-G07; KV5-122,Hussain K/Kumar K,Tuesday,15:30,17:30
+MECH321,L,1,KV14-211,O'Driscoll C,Sunday,13:30,15:30
+MECH321,T,1,KV5-FTC Lab/ KV5-124,O'Driscoll C,Thursday,15:30,17:30
+MECH326,C,1,KV5-103 - Network Lab,Yousuf M,Monday,15:30,17:30
+MECH326,L,1,KV15-221,Asghar U,Tuesday,14:30,16:30
+MECH326,T,1,KV14-206,Asghar U,Tuesday,15:30,17:30
+MECH341,C,1,KV5-122; KV5-FTC Lab,Yousuf M,Monday,13:30,15:30
+MECH341,L,1,KV14-G09,Chacha M,Tuesday,10:30,12:30
+MECH341,T,1,KV14-307,Chacha M,Tuesday,15:30,17:30
+MECH382,C,1,KV14-G07 Workshop Lab,Kumar K;Ahmed M,Wednesday,16:30,18:30
+MECH382,L,1,KV14-307,Asghar U,Thursday,13:30,15:30
+MECH382,T,1,KV15-223,Asghar U,Tuesday,13:30,15:30
+MGNT110,L,1,KV15-L-Theatre,Watson A,Monday,08:30,10:30
+MGNT110,T,A,KV15-223,Watson A,Sunday,11:30,12:30
+MGNT110,T,B,KV14-208,Watson A,Monday,11:30,12:30
+MGNT110,T,C,KV14-210,Khurshid S.,Wednesday,14:30,12:30
+MGNT110,T,D,KV15-223,Khurshid S.,Thursday,13:30,15:30
+MGNT110,T,E,KV14-209,Khurshid S.,Thursday,14:30,14:30
+MGNT205,L,1,KV14-204,Thirlwall A,Sunday,13:30,15:30
+MGNT205,T,A,KV15-221,Thirlwall A,Sunday,15:30,15:30
+MGNT205,T,B,KV15-221,Thirlwall A,Monday,11:30,16:30
+MGNT205,T,C,KV14-307,Thirlwall A,Wednesday,11:30,12:30
+MGNT215,L,1,KV14-G02,Sehgal R,Tuesday,14:30,16:30
+MGNT215,T,A,KV15-223,Khurshid S.,Monday,09:30,10:30
+MGNT215,T,B,KV15-221,Sehgal R,Tuesday,08:30,09:30
+MGNT215,T,C,KV14-202,Sehgal R,Tuesday,13:30,14:30
+MGNT215,T,D,KV14-210,Khurshid S,Thursday,10:30,11:30
+MGNT311,L,1,KV15-117,Sehgal R,Wednesday,08:30,10:30
+MGNT311,T,A,KV15-110,Sehgal R,Tuesday,10:30,11:30
+MGNT311,T,B,KV15-110,Sehgal R,Monday,11:30,12:30
+MGNT314,L,1,KV14-301,Guruswamy M,Monday,16:30,18:30
+MGNT314,T,A,KV15-221,Guruswamy M,Tuesday,15:30,16:30
+MGNT314,T,B,KV15-221,Guruswamy M,Sunday,14:30,15:30
+MGNT321,L,1,KV14-306,Mustafa M,Sunday,15:30,17:30
+MGNT321,T,1,KV14-306,Mustafa M,Monday,17:30,18:30
+MGNT322,L,1,KV14-211,Thirlwall A,Monday,13:30,15:30
+MGNT322,T,A,KV14-211,Thirlwall A,Monday,15:30,16:30
+MGNT351,L,1,KV15-223,Zakaria N,Monday,10:30,12:30
+MGNT351,T,A,KV15-223,Zakaria N,Monday,13:30,14:30
+MGNT351,T,B,KV15-221,Baghestani M,Tuesday,09:30,10:30
+MGNT389,L,1,KV14-307,Mustafa N,Tuesday,08:30,10:30
+MGNT389,T,A,KV14-302,Mustafa N,Tuesday,10:30,11:30
+MGNT389,T,B,KV14-125,Mustafa N,Tuesday,13:30,14:30
+MGNT389,T,C,KV14-206,Baghestani M,Thursday,08:30,09:30
+MGNT389,T,D,KV15-110,Mustafa N,Thursday,13:30,14:30
+OPS 216,L,1,KV15-121,Abu Salim T,Wednesday,14:30,16:30
+OPS 216,T,A,KV14-202,Abu Salim T,Sunday,13:30,14:30
+OPS 216,T,B,KV14-210,Abu Salim T,Sunday,14:30,15:30
+OPS 216,T,C,KV14-G09,Khurshid S.,Monday,08:30,09:30
+PSYC015,L,1,KV14-G09,Boutrid A,Sunday,10:30,12:30
+PSYC015,T,A,KV15-221,Boutrid A,Sunday,13:30,15:30
+PSYC015,T,B,KV14-205,Khan A,Monday,13:30,15:30
+PSYC015,T,C,KV14-203,Khan A,Wednesday,10:30,12:30
+SOC 103,L,1,KV15-121,Mallory M,Thursday,16:30,18:30
+SOC 103,T,A,KV14-206,Khataw F,Thursday,15:30,17:30
+SOC 103,T,B,KV15-223,Khataw F,Wednesday,10:30,12:30
+SOC 103,T,C,KV14-302,Khataw F,Thursday,13:30,15:30
+STAT131,L,1,KV14-125,Lo A.,Sunday,08:30,10:30
+STAT131,T,A,KV14-206,Lo A.,Tuesday,13:30,14:30
+STAT291,L,1,KV14-125,Lo A.,Sunday,08:30,10:30
+STAT291,T,A,KV15-223,El Khouly A,Sunday,13:30,14:30
+STAT291,T,B,KV14-208,El Khouly A,Thursday,13:30,14:30

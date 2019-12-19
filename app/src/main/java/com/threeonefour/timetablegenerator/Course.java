@@ -2,7 +2,7 @@ package com.threeonefour.timetablegenerator;
 
 import javax.security.auth.Subject;
 
-public class Course {
+class Course {
     private String code;
     private String name;
     private Subject[] generalSubs;

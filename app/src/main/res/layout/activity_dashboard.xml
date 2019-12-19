@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dasboardConstraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
@@ -14,6 +15,8 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="40dp"
         android:text="Logout"
+        android:textAllCaps="false"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,14 +24,13 @@
         android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/montserrat"
         android:text="Loading Data..."
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoutButton" />
 
@@ -36,9 +38,25 @@
         android:id="@+id/curSubText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/montserrat"
-        android:text="Setup your subjects"
+        android:text="Setup completed subjects first"
+        android:textAlignment="center"
+        android:textColor="#707070"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genTimetableButton" />
+
+    <TextView
+        android:id="@+id/yourTtTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Your Timetable"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="28sp"
         android:visibility="invisible"
@@ -46,32 +64,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
 
-    <TextView
-        android:id="@+id/yourTtTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Your Timetable"
-        android:textColor="#000000"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseSubButton" />
-
     <Button
         android:id="@+id/chooseSubButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="15dp"
         android:text="Choose Subjects"
+        android:textAlignment="center"
+        android:textAllCaps="false"
         android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/curSubText" />
+        app:layout_constraintEnd_toStartOf="@+id/logoutButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/genTimetableButton"
@@ -80,10 +84,13 @@
         android:layout_marginTop="24dp"
         android:padding="20dp"
         android:text="Plan Timetable"
+        android:textAlignment="center"
         android:textSize="20sp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yourTtTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/yourTtTextView"
+        app:layout_constraintVertical_bias="0.20999998" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

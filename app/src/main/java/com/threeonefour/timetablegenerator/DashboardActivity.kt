@@ -9,11 +9,13 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import com.threeonefour.timetablegenerator.SubjectSelectionActivity.Companion.COMPLETED_SUBJECTS
+import com.threeonefour.timetablegenerator.SubjectSelectionActivity.Companion.COURSE_SUBJECT_LIST
 import kotlinx.android.synthetic.main.activity_dashboard.*
-import kotlinx.android.synthetic.main.activity_signup.*
 import kotlinx.android.synthetic.main.activity_signup.logoutButton
+
+//import com.threeonefour.timetablegenerator.TimetableGenerator.updateTimetable as updateTimetable;
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -21,6 +23,11 @@ class DashboardActivity : AppCompatActivity() {
     private var mDatabaseReference: DatabaseReference? = null
     private var mDatabase: FirebaseDatabase? = null
     private var mAuth: FirebaseAuth? = null
+
+    /*-----------------------------------JAVA VARIABLES------------------------------------*/
+    val timeTableGenObj : TimetableGenerator = TimetableGenerator()
+    /*--------------------------------END OF JAVA VARIABLES---------------------------------*/
+
 
     private lateinit var _db: DatabaseReference
 //    private lateinit var _StudentsDB: DatabaseReference
@@ -38,9 +45,15 @@ class DashboardActivity : AppCompatActivity() {
         chooseSubButton!!.isEnabled =false
 
         initialise()
+
     }
 
     private fun initialise() {
+
+
+
+
+
         mDatabase = FirebaseDatabase.getInstance()
         mDatabaseReference = mDatabase!!.reference!!.child("Students")
         mAuth = FirebaseAuth.getInstance()
@@ -64,25 +77,6 @@ class DashboardActivity : AppCompatActivity() {
                 startActivity(signUpIntent)
             }
 
-
-//        currentUserDb.addValueEventListener( object: ValueEventListener {
-//            override fun onCancelled(p0: DatabaseError) {
-//                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//            }
-//
-//            override fun onDataChange(p0: DataSnapshot) {
-//                if (p0.child("completedSubs").exists()){
-////                    Toast.makeText(this@DashboardActivity, "Does exist.", Toast.LENGTH_SHORT).show()
-//                    Log.d("COMP SUB EXISTS", "Does exist")
-//                }
-//                else{
-////                    Toast.makeText(this@DashboardActivity, "Does not exist.", Toast.LENGTH_SHORT).show()
-//                    Log.d("COMP SUB EXISTS", "Does NOT exist")
-//                }
-//            }
-//
-//        })
-
         chooseSubButton!!
             .setOnClickListener{
                 val subSelection = Intent(this, SubjectSelectionActivity::class.java)
@@ -91,9 +85,13 @@ class DashboardActivity : AppCompatActivity() {
 
         bGenTimetable!!
             .setOnClickListener{
-                if (!bGenTimetable!!.isEnabled){
-                    Toast.makeText(this@DashboardActivity, "Select Subjects first.",Toast.LENGTH_SHORT).show()
-                }
+//                if (!bGenTimetable!!.isEnabled){
+//                    Toast.makeText(this@DashboardActivity, "Select Subjects first.",Toast.LENGTH_SHORT).show()
+//                }
+                val intent = Intent(this@DashboardActivity, SubjectRangeActivity::class.java)
+                startActivity(intent)
+//                finish();
+
             }
 
 
@@ -101,6 +99,19 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     override fun onStart() {
+
+        /*-----------------------------------JAVA CODE------------------------------------*/
+
+//        val timeTableGenObj : TimetableGenerator? = TimetableGenerator()
+
+        TimetableGenerator.subjects = COURSE_SUBJECT_LIST;
+        TimetableGenerator.updateTimetable(this)
+
+
+
+
+        /*--------------------------------END OF JAVA CODE---------------------------------*/
+
         super.onStart()
         val mUser = mAuth!!.currentUser
         val mUserID = mUser!!.uid
@@ -121,13 +132,17 @@ class DashboardActivity : AppCompatActivity() {
 //
 //        })
 
+        Log.d("COMP_SUB_ARRAYLIST", "${COMPLETED_SUBJECTS.size}")
+
         _db.addValueEventListener(object: ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
             }
 
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.exists()){
+
+                    SubjectSelectionActivity.COURSE_SUBJECT_LIST.clear()
 
                     val coreSubsList: DataSnapshot = p0.child("core");
                     val gedSubsList: DataSnapshot = p0.child("gedSubs");
@@ -228,24 +243,35 @@ class DashboardActivity : AppCompatActivity() {
         mUserReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 
+                COMPLETED_SUBJECTS.clear()
+
 //                val compSubs: DataSnapshot = snapshot.child(mUserID)
                 val count = snapshot.childrenCount
-                Log.d("STUDENT CHILD COUNT", "$count")
-
 
                 val fullName = snapshot.child("name").value as String
                 val firstName = fullName.split(" ")[0]
+                tvWelcomeText!!.text = "Hi, $firstName"
 
-                tvWelcomeText!!.text = "Hi $firstName"
+                val compSubs: DataSnapshot = snapshot.child("completedSubs")
+                Log.d("COMP SUB SNAPSHOT", "$compSubs")
+                if (compSubs != null)
+                for (subs in compSubs.children){
+                    val subId: String = subs.value as String
+                    Log.d("COMP_SUB_ID", "$subId")
+                    COMPLETED_SUBJECTS.add(subId)
+                }
+
 
                 tvSubSelSubheading!!.visibility = View.VISIBLE
                 chooseSubButton!!.visibility = View.VISIBLE
-                chooseSubButton!!.text = "Edit Subjects"
-                bGenTimetable!!.isEnabled = true
+//                chooseSubButton!!.text = "Edit Subjects"
+                tvYourTimetable!!.visibility = View.VISIBLE
+                bGenTimetable!!.visibility = View.VISIBLE
+                logoutButton!!.visibility =View.VISIBLE
 
-                tvSubSelSubheading!!.setText("Setup Subjects")
-                chooseSubButton!!.setText("Edit Subjects")
-                bGenTimetable!!.isEnabled = true
+                tvSubSelSubheading!!.setText("Setup completed subjects first")
+//                chooseSubButton!!.setText("Edit Subjects")
+                bGenTimetable!!.isEnabled = false
 
 
                 if (count > 1){
@@ -258,7 +284,9 @@ class DashboardActivity : AppCompatActivity() {
 
                 }
             }
-            override fun onCancelled(databaseError: DatabaseError) {}
+            override fun onCancelled(databaseError: DatabaseError) {
+
+            }
         })
     }
 

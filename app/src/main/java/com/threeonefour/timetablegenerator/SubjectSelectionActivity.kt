@@ -25,6 +25,7 @@ import kotlinx.android.synthetic.main.activity_dashboard.*
 class SubjectSelectionActivity : AppCompatActivity() {
     companion object {
         var COURSE_SUBJECT_LIST: ArrayList<Subject> = ArrayList<Subject>()
+        var COMPLETED_SUBJECTS: ArrayList<String> = ArrayList<String>()
     }
 
     private var mDatabaseReference: DatabaseReference? = null
@@ -63,30 +64,31 @@ class SubjectSelectionActivity : AppCompatActivity() {
 
 
         mDatabase = FirebaseDatabase.getInstance()
-        mDatabaseReference = mDatabase!!.reference!!.child("Students")
+        mDatabaseReference = mDatabase!!.reference.child("Students")
         mAuth = FirebaseAuth.getInstance()
         val userId = mAuth!!.currentUser!!.uid
         val currentUserDb = mDatabaseReference!!.child(userId)
-        Log.d("CURRENT USER", "$userId");
+        Log.d("CURRENT USER", "$userId")
 
         doneButton!!.setOnClickListener {
-//                    }
+            //                    }
             var counter = 0
             currentUserDb.child("completedSubs").removeValue()
             currentUserDb.child("completedSubs").child("$counter").setValue("NONE")
 //            currentUserDb.setValue("completedSubs")
-                for (i in 0 until SubjectSelectionAdapter.public_subjectArrayList!!.size){
-                    if (SubjectSelectionAdapter.public_subjectArrayList!!.get(i).isSelected) {
-                        val testString = SubjectSelectionAdapter.public_subjectArrayList!!.get(i).subName
-                        currentUserDb.child("completedSubs").child("$counter").setValue(testString)
-                        counter++;
-                    }
-                    }
+            for (i in 0 until SubjectSelectionAdapter.public_subjectArrayList.size) {
+                if (SubjectSelectionAdapter.public_subjectArrayList.get(i).isSelected) {
+                    val testString =
+                        SubjectSelectionAdapter.public_subjectArrayList.get(i).subName
+                    currentUserDb.child("completedSubs").child("$counter").setValue(testString)
+                    counter++
+                }
+            }
             val intent = Intent(this@SubjectSelectionActivity, DashboardActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(intent)
-            finish();
-                }
+            finish()
+        }
 
 
 
@@ -98,13 +100,23 @@ class SubjectSelectionActivity : AppCompatActivity() {
     }
 
     private fun getModel(isSelect: Boolean): ArrayList<Model> {
+        var boolThing: Boolean = isSelect
         val list = ArrayList<Model>()
         for (i in COURSE_SUBJECT_LIST.indices) {
 
             val model = Model()
-            model.setSelects(isSelect)
+            for (sub in COMPLETED_SUBJECTS){
+//                Log.d("COMP SUBS LIST", "name:${sub}")
+                if (sub == COURSE_SUBJECT_LIST[i].code) {
+                    boolThing = true
+                    break
+                }
+            }
+            model.setSelects(boolThing)
             model.setsubName(COURSE_SUBJECT_LIST[i].code)
+            Log.d("MODEL_APPEND", "name:${COURSE_SUBJECT_LIST[i].code}, sel: $boolThing")
             list.add(model)
+            boolThing = false
         }
         return list
     }
