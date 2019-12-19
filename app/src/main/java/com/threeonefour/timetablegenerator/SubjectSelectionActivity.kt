@@ -73,14 +73,21 @@ class SubjectSelectionActivity : AppCompatActivity() {
 //                    }
             var counter = 0
             currentUserDb.child("completedSubs").removeValue()
+            currentUserDb.child("completedSubs").child("$counter").setValue("NONE")
+//            currentUserDb.setValue("completedSubs")
                 for (i in 0 until SubjectSelectionAdapter.public_subjectArrayList!!.size){
                     if (SubjectSelectionAdapter.public_subjectArrayList!!.get(i).isSelected) {
                         val testString = SubjectSelectionAdapter.public_subjectArrayList!!.get(i).subName
                         currentUserDb.child("completedSubs").child("$counter").setValue(testString)
                         counter++;
                     }
+                    }
+            val intent = Intent(this@SubjectSelectionActivity, DashboardActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(intent)
+            finish();
                 }
-            }
+
 
 
 

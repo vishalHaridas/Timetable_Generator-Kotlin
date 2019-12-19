@@ -23,10 +23,13 @@ class DashboardActivity : AppCompatActivity() {
     private var mAuth: FirebaseAuth? = null
 
     private lateinit var _db: DatabaseReference
+//    private lateinit var _StudentsDB: DatabaseReference
 
     //UI elements
     private var tvWelcomeText: TextView? = null
     private var bGenTimetable: Button? = null
+    private var tvSubSelSubheading: TextView? = null
+    private var tvYourTimetable: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,9 +48,12 @@ class DashboardActivity : AppCompatActivity() {
         val currentUserDb = mDatabaseReference!!.child(userId)
         tvWelcomeText = findViewById<View>(R.id.welcomeTextView) as TextView
         bGenTimetable = findViewById(R.id.genTimetableButton) as Button;
+        tvSubSelSubheading = findViewById(R.id.curSubText) as TextView;
+        tvYourTimetable = findViewById(R.id.yourTtTextView) as TextView;
 
 
         _db = FirebaseDatabase.getInstance().getReference("Courses/COBSC01")
+//        _StudentsDB = FirebaseDatabase.getInstance().getReference("Students")
 
         bGenTimetable!!.isEnabled = false
 
@@ -97,9 +103,23 @@ class DashboardActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         val mUser = mAuth!!.currentUser
-        val mUserReference = mDatabaseReference!!.child(mUser!!.uid)
+        val mUserID = mUser!!.uid
+        val mUserReference = mDatabaseReference!!.child(mUserID)
+//        val _compSubs =
 //        tvEmail!!.text = mUser.email
 //        tvEmailVerifiied!!.text = mUser.isEmailVerified.toString()
+
+//        _StudentsDB.addValueEventListener(object: ValueEventListener{
+//            override fun onCancelled(p0: DatabaseError) {
+//                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//            }
+//
+//            override fun onDataChange(p0: DataSnapshot) {
+//                val count = p0.childrenCount
+//                Log.d("STUDENT CHILD COUNT", "$count")
+//            }
+//
+//        })
 
         _db.addValueEventListener(object: ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
@@ -108,9 +128,6 @@ class DashboardActivity : AppCompatActivity() {
 
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.exists()){
-
-
-
 
                     val coreSubsList: DataSnapshot = p0.child("core");
                     val gedSubsList: DataSnapshot = p0.child("gedSubs");
@@ -210,10 +227,36 @@ class DashboardActivity : AppCompatActivity() {
 
         mUserReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+
+//                val compSubs: DataSnapshot = snapshot.child(mUserID)
+                val count = snapshot.childrenCount
+                Log.d("STUDENT CHILD COUNT", "$count")
+
+
                 val fullName = snapshot.child("name").value as String
                 val firstName = fullName.split(" ")[0]
 
                 tvWelcomeText!!.text = "Hi $firstName"
+
+                tvSubSelSubheading!!.visibility = View.VISIBLE
+                chooseSubButton!!.visibility = View.VISIBLE
+                chooseSubButton!!.text = "Edit Subjects"
+                bGenTimetable!!.isEnabled = true
+
+                tvSubSelSubheading!!.setText("Setup Subjects")
+                chooseSubButton!!.setText("Edit Subjects")
+                bGenTimetable!!.isEnabled = true
+
+
+                if (count > 1){
+                    tvSubSelSubheading!!.visibility = View.GONE;
+                    chooseSubButton!!.setText("Edit Subjects")
+                    tvYourTimetable!!.visibility = View.VISIBLE
+                    bGenTimetable!!.visibility = View.VISIBLE
+                    bGenTimetable!!.isEnabled = true
+
+
+                }
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         })

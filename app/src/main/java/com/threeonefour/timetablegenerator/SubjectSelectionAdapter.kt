@@ -70,7 +70,7 @@ class SubjectSelectionAdapter(private val context: Context, subjectArrayList: Ar
             val tempview = holder.checkBox!!.getTag(R.integer.btnplusview) as View
             val tv = tempview.findViewById(R.id.subNameTextView) as TextView
             val pos = holder.checkBox!!.tag as Int
-            Toast.makeText(context, "Checkbox $pos clicked! with subCode: $subName", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "Checkbox $pos clicked! with subCode: $subName", Toast.LENGTH_SHORT).show()
 
 
             if (subjectArrayList[pos].getSelects()) {
