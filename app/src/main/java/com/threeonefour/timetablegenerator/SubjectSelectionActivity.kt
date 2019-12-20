@@ -12,10 +12,12 @@ import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.FragmentActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.threeonefour.timetablegenerator.SubjectSelectionActivity.Companion.COURSE_SUBJECT_LIST
 import kotlinx.android.synthetic.main.activity_dashboard.*
+import kotlinx.android.synthetic.main.activity_subject_selection.*
 
 
 //TODO: Course List with subject object
@@ -46,6 +48,10 @@ class SubjectSelectionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_subject_selection)
+
+        val toolbar: Toolbar = findViewById(R.id.subSelToolbar);
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         initialise()
     }
@@ -89,6 +95,7 @@ class SubjectSelectionActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
 
 
 

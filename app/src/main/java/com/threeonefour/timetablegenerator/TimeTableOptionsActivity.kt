@@ -6,10 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.Button
-import android.widget.ListView
-import android.widget.TextView
+import android.widget.*
+import androidx.appcompat.widget.Toolbar
 import java.time.DayOfWeek
 import java.time.LocalTime
 
@@ -52,8 +50,16 @@ class TimeTableOptionsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_time_table_options)
 
-        val tTableSubList = findViewById<ListView>(R.id.tTablesubListView)
-        tTableSubList.adapter = tTableAdapter(this)
+        val toolbar: Toolbar = findViewById(R.id.timeTableOptionsToolbar);
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+
+        val tTableGrid: GridView = findViewById(R.id.tTableGenGridView)
+        tTableGrid.adapter = tTableGridAdapter(this)
+
+//        val tTableSubList = findViewById<ListView>(R.id.tTablesubListView)
+//        tTableSubList.adapter = tTableAdapter(this)
 
         classOneList.add(cOne);
         classOneList.add(cTwo)
@@ -115,6 +121,42 @@ class TimeTableOptionsActivity : AppCompatActivity() {
         override fun getItemId(position: Int): Long {
             return 0
 
+        }
+
+        override fun getCount(): Int {
+            return TIMETABLE_LIST.size
+        }
+
+    }
+
+    private class tTableGridAdapter(context: Context) : BaseAdapter(){
+
+        private val mContext: Context
+
+        init{
+            mContext = context
+        }
+
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            val LayoutInflater = LayoutInflater.from(mContext)
+            val rowMain = LayoutInflater.inflate(R.layout.time_table_sub_option, parent, false)
+
+            val subTitle = rowMain.findViewById(R.id.tTableSubTextView) as TextView
+
+            val tTable: Timetable = getItem(position) as Timetable
+
+            subTitle.text = "CSIT212\nCSIT214\nCSIT314\nCSIT111"
+
+            return rowMain
+        }
+
+        override fun getItem(position: Int): Any {
+            return TIMETABLE_LIST[position]
+        }
+
+        override fun getItemId(position: Int): Long {
+            return 0
         }
 
         override fun getCount(): Int {

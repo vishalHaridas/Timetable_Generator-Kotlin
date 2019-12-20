@@ -10,13 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".TimeTableOptionsActivity"></activity>
-        <activity android:name=".SubjectRangeActivity" />
-        <activity android:name=".SubjectSelectionActivity" />
+        tools:ignore="GoogleAppIndexingWarning"
+        android:screenOrientation="portrait">
+        <activity
+            android:name=".TimeTableOptionsActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".SubjectRangeActivity" />
+        <activity android:name=".SubjectRangeActivity" android:parentActivityName=".DashboardActivity"/>
+        <activity android:name=".SubjectSelectionActivity" android:parentActivityName=".DashboardActivity"/>
 <!--        <activity android:name=".SubjectSelectionHeaderTextActivity" />-->
-        <activity android:name=".DashboardActivity" />
-        <activity android:name=".SignUpActivity" />
+        <activity android:name=".DashboardActivity"  />
+        <activity android:name=".SignUpActivity" android:parentActivityName=".LoginActivity"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -7,6 +7,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -19,6 +20,7 @@ class SignUpActivity : AppCompatActivity() {
     private var etFirstName: EditText? = null
     private var etEmail: EditText? = null
     private var etPassword: EditText? = null
+    private var etconfPassword: EditText? = null
     private var btnCreateAccount: Button? = null
     private var spCourses: Spinner? = null
     //private var mProgressBar: ProgressBar? = null
@@ -33,12 +35,17 @@ class SignUpActivity : AppCompatActivity() {
     private var firstName: String? = null
     private var email: String? = null
     private var password: String? = null
+    private var confPassword: String? = null
 
     private var course: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
+
+        val signUpToolbar: Toolbar = findViewById(R.id.signUpToolbar);
+        setSupportActionBar(signUpToolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         courseSpinner.adapter = ArrayAdapter(
             this, android.R.layout.simple_spinner_item, resources.getStringArray(R.array.Courses))
@@ -49,7 +56,8 @@ class SignUpActivity : AppCompatActivity() {
     private fun initialize(){
         etFirstName = findViewById<View>(R.id.fullNameText) as EditText
         etEmail = findViewById<View>(R.id.emailText) as EditText
-        etPassword = findViewById<View>(R.id.passConfirmText) as EditText
+        etPassword = findViewById<View>(R.id.passMainText) as EditText
+        etconfPassword = findViewById<View>(R.id.passConfirmText) as EditText
         btnCreateAccount = findViewById<View>(R.id.registerButton) as Button
         spCourses = findViewById<View>(R.id.courseSpinner) as Spinner
         //mProgressBar = ProgressBar(this)
@@ -71,7 +79,7 @@ class SignUpActivity : AppCompatActivity() {
 
 
         if (!TextUtils.isEmpty(firstName) && !TextUtils.isEmpty(email) &&
-            !TextUtils.isEmpty(password)
+            !TextUtils.isEmpty(password) && confPassword.equals(password)
         ) {
             //mProgressBar!!.visibility = View.VISIBLE    //REMOVE IF DOESNT DO ANYTHING
 

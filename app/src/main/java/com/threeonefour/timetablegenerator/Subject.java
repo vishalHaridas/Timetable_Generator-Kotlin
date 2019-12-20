@@ -43,6 +43,6 @@ public class Subject {
 
     @Override
     public String toString() {
-        return code + " " + subName;
+        return code + " " + subName + " " + classes[0].size();
     }
 }

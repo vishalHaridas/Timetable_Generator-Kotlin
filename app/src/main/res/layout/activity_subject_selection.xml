@@ -61,38 +61,43 @@
 
 <!--</RelativeLayout>-->
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_color"
     tools:context=".SubjectSelectionActivity">
 
+    <include
+        android:id="@+id/subSelToolbar"
+        layout="@layout/toolbar_dashboard"/>
 
-    <Button
-        android:id="@+id/subSelBackButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="25dp"
-        android:text="Back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <Button-->
+    <!--        android:id="@+id/subSelBackButton"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="40dp"-->
+    <!--        android:layout_marginTop="25dp"-->
+    <!--        android:text="Back"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
         android:id="@+id/subSelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/subSelBackButton"
         android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/montserrat"
         android:text="Subject Setup"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/heading_text_color"
         android:textSize="45sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subSelBackButton" />
+        app:layout_constraintTop_toBottomOf="@+id/subSelToolbar" />
 
     <TextView
         android:id="@+id/subSelSubTextView"
@@ -103,7 +108,7 @@
         android:fontFamily="@font/montserrat"
         android:text="Select the subjects you have or will complete"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#707070"
+        android:textColor="@color/text_subheading_color"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -118,6 +123,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
+        android:layout_marginBottom="10dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@+id/subSelDoneButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -130,11 +136,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/primary_button_color"
+        android:fontFamily="@font/montserrat"
         android:text="Done"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

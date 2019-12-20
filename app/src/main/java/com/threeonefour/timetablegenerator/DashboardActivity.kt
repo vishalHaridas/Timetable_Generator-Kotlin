@@ -1,6 +1,7 @@
 package com.threeonefour.timetablegenerator
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,12 +9,16 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.threeonefour.timetablegenerator.SubjectSelectionActivity.Companion.COMPLETED_SUBJECTS
 import com.threeonefour.timetablegenerator.SubjectSelectionActivity.Companion.COURSE_SUBJECT_LIST
 import kotlinx.android.synthetic.main.activity_dashboard.*
-import kotlinx.android.synthetic.main.activity_signup.logoutButton
+import kotlinx.android.synthetic.main.toolbar_dashboard.*
+import kotlin.system.exitProcess
+
+//import kotlinx.android.synthetic.main.activity_signup.logoutButton
 
 //import com.threeonefour.timetablegenerator.TimetableGenerator.updateTimetable as updateTimetable;
 
@@ -42,6 +47,7 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
+
         chooseSubButton!!.isEnabled =false
 
         initialise()
@@ -49,11 +55,6 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun initialise() {
-
-
-
-
-
         mDatabase = FirebaseDatabase.getInstance()
         mDatabaseReference = mDatabase!!.reference!!.child("Students")
         mAuth = FirebaseAuth.getInstance()
@@ -64,27 +65,27 @@ class DashboardActivity : AppCompatActivity() {
         tvSubSelSubheading = findViewById(R.id.curSubText) as TextView;
         tvYourTimetable = findViewById(R.id.yourTtTextView) as TextView;
 
+        val dashBoardToolbar: Toolbar = findViewById(R.id.dasboardToolbar);
+        setSupportActionBar(dashBoardToolbar)
+
 
         _db = FirebaseDatabase.getInstance().getReference("Courses/COBSC01")
 //        _StudentsDB = FirebaseDatabase.getInstance().getReference("Students")
 
         bGenTimetable!!.isEnabled = false
 
-        logoutButton!!
-            .setOnClickListener {
+        logoutButton!!.setOnClickListener {
                 mAuth!!.signOut()
                 val signUpIntent = Intent(this, LoginActivity::class.java)
                 startActivity(signUpIntent)
             }
 
-        chooseSubButton!!
-            .setOnClickListener{
+        chooseSubButton!!.setOnClickListener{
                 val subSelection = Intent(this, SubjectSelectionActivity::class.java)
                 startActivity(subSelection);
             }
 
-        bGenTimetable!!
-            .setOnClickListener{
+        bGenTimetable!!.setOnClickListener{
 //                if (!bGenTimetable!!.isEnabled){
 //                    Toast.makeText(this@DashboardActivity, "Select Subjects first.",Toast.LENGTH_SHORT).show()
 //                }
@@ -100,37 +101,10 @@ class DashboardActivity : AppCompatActivity() {
 
     override fun onStart() {
 
-        /*-----------------------------------JAVA CODE------------------------------------*/
-
-//        val timeTableGenObj : TimetableGenerator? = TimetableGenerator()
-
-        TimetableGenerator.subjects = COURSE_SUBJECT_LIST;
-        TimetableGenerator.updateTimetable(this)
-
-
-
-
-        /*--------------------------------END OF JAVA CODE---------------------------------*/
-
         super.onStart()
         val mUser = mAuth!!.currentUser
         val mUserID = mUser!!.uid
         val mUserReference = mDatabaseReference!!.child(mUserID)
-//        val _compSubs =
-//        tvEmail!!.text = mUser.email
-//        tvEmailVerifiied!!.text = mUser.isEmailVerified.toString()
-
-//        _StudentsDB.addValueEventListener(object: ValueEventListener{
-//            override fun onCancelled(p0: DatabaseError) {
-//                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//            }
-//
-//            override fun onDataChange(p0: DataSnapshot) {
-//                val count = p0.childrenCount
-//                Log.d("STUDENT CHILD COUNT", "$count")
-//            }
-//
-//        })
 
         Log.d("COMP_SUB_ARRAYLIST", "${COMPLETED_SUBJECTS.size}")
 
@@ -288,6 +262,25 @@ class DashboardActivity : AppCompatActivity() {
 
             }
         })
+
+
+        //region -----------------------------------JAVA BACKEND CALLS------------------------------------
+
+        TimetableGenerator.subjects = COURSE_SUBJECT_LIST;
+//        Log.d("SUBJECTLIST_SIZE", "${TimetableGenerator.subjects.size}")
+        TimetableGenerator.updateTimetable(this)
+        TimetableGenerator.updateCurrentSubjects()
+        TimetableGenerator.addClassesToSubject()
+        if (TimetableGenerator.subjects.size > 0)
+            for (i in 0 until TimetableGenerator.subjects.size)
+            Log.d("SUBJECTLIST_OBJECT", "${TimetableGenerator.subjects[i]}")
+
+
+
+
+        /*--------------------------------END OF JAVA CODE---------------------------------*/
+        //endregion
+
     }
 
 }

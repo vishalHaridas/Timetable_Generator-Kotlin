@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#505050</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#D8F2E9</color>
+    <color name="colorPrimaryDark">#D8F2E9</color>
+    <color name="colorAccent">#505050</color>
+    <color name="heading_text_color">#353535</color>
+    <color name="text_subheading_color">#858585</color>
+    <drawable name="bg_color">#FAFAFA</drawable>
+    <drawable name="primary_button_color">#6EC49D</drawable>
 </resources>
