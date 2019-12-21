@@ -41,13 +41,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tTableHeaderTextView" />
 
-    <GridView
-        android:id="@+id/tTableGenGridView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subSelSubTextView"
-        android:numColumns="8"/>
+<!--    <GridView-->
+<!--        android:id="@+id/tTableGenGridView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/subSelSubTextView"-->
+<!--        android:numColumns="8"/>-->
+<!--    <me.yaoandy107.ntut_timetable.CourseTableLayout-->
+<!--        android:id="@+id/courseTable"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/subSelSubTextView" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
