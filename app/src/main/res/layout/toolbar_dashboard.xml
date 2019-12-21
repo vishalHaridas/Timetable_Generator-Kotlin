@@ -6,10 +6,25 @@
     android:background="@color/colorPrimary"
     android:elevation="4dp">
 
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:elevation="0dp"
+        android:fontFamily="@font/montserrat"
+        android:text="TimeTable Generator"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="right">
+
 
         <TextView
             android:id="@+id/chooseSubButton"

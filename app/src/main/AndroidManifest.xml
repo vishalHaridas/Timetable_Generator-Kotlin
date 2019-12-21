@@ -8,19 +8,25 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning"
-        android:screenOrientation="portrait">
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".TimeTableClassesActivity"></activity>
         <activity
             android:name=".TimeTableOptionsActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".SubjectRangeActivity" />
-        <activity android:name=".SubjectRangeActivity" android:parentActivityName=".DashboardActivity"/>
-        <activity android:name=".SubjectSelectionActivity" android:parentActivityName=".DashboardActivity"/>
-<!--        <activity android:name=".SubjectSelectionHeaderTextActivity" />-->
-        <activity android:name=".DashboardActivity"  />
-        <activity android:name=".SignUpActivity" android:parentActivityName=".LoginActivity"/>
+            android:parentActivityName=".SubjectRangeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SubjectRangeActivity"
+            android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".SubjectSelectionActivity"
+            android:parentActivityName=".DashboardActivity" /> <!-- <activity android:name=".SubjectSelectionHeaderTextActivity" /> -->
+        <activity android:name=".DashboardActivity" />
+        <activity
+            android:name=".SignUpActivity"
+            android:parentActivityName=".LoginActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

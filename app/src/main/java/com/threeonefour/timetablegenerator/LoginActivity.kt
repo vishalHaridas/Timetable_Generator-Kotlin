@@ -47,6 +47,9 @@ class LoginActivity : AppCompatActivity() {
         if (user != null)
             updateUI()
 
+
+
+
         initialise()
     }
 

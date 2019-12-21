@@ -15,7 +15,10 @@ import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.FragmentActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.threeonefour.timetablegenerator.SubjectSelectionActivity.Companion.COURSE_SUBJECT_LIST
+import com.threeonefour.timetablegenerator.DashboardActivity.Companion.COMPLETED_SUBJECTS
+import com.threeonefour.timetablegenerator.DashboardActivity.Companion.COURSE_SUBJECT_LIST
+import com.threeonefour.timetablegenerator.SubjectSelectionAdapter.Companion.public_subjectArrayList
+//import com.threeonefour.timetablegenerator.SubjectSelectionActivity.Companion.COURSE_SUBJECT_LIST
 import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.activity_subject_selection.*
 
@@ -25,10 +28,7 @@ import kotlinx.android.synthetic.main.activity_subject_selection.*
 
 
 class SubjectSelectionActivity : AppCompatActivity() {
-    companion object {
-        var COURSE_SUBJECT_LIST: ArrayList<Subject> = ArrayList<Subject>()
-        var COMPLETED_SUBJECTS: ArrayList<String> = ArrayList<String>()
-    }
+
 
     private var mDatabaseReference: DatabaseReference? = null
     private var mDatabase: FirebaseDatabase? = null
@@ -40,6 +40,9 @@ class SubjectSelectionActivity : AppCompatActivity() {
     private var lv: ListView? = null
     private var doneButton: Button? = null
     private var subSelAdapter: SubjectSelectionAdapter? = null
+
+
+//    private lateinit var duplicateSubjectList: ArrayList<Model>
 
 
 //    private lateinit var _db: DatabaseReference
@@ -57,6 +60,8 @@ class SubjectSelectionActivity : AppCompatActivity() {
     }
 
     private fun initialise(){
+
+
 
 //        _db = FirebaseDatabase.getInstance().getReference("Student/COBSC01")
 //        dbCourseList = mutableListOf()
@@ -76,8 +81,24 @@ class SubjectSelectionActivity : AppCompatActivity() {
         val currentUserDb = mDatabaseReference!!.child(userId)
         Log.d("CURRENT USER", "$userId")
 
+
+
+//        doneButton!!.isEnabled = false
+
+
+
+//        for (i in 0 until SubjectSelectionAdapter.public_subjectArrayList.size){
+//            if (duplicateSubjectList[i] == SubjectSelectionAdapter.public_subjectArrayList[i]){
+//                doneButton!!.isEnabled = true
+//            }
+//        }
+
         doneButton!!.setOnClickListener {
             //                    }
+
+
+
+
             var counter = 0
             currentUserDb.child("completedSubs").removeValue()
             currentUserDb.child("completedSubs").child("$counter").setValue("NONE")
@@ -94,6 +115,8 @@ class SubjectSelectionActivity : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(intent)
             finish()
+
+//            duplicateSubjectList = SubjectSelectionAdapter.public_subjectArrayList.clone() as ArrayList<Model>
         }
 
 

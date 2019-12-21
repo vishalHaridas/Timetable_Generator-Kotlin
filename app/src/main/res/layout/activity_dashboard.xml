@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/montserrat"
-        android:text="Setup completed subjects first"
+        android:text="Set up completed subjects first"
         android:textAlignment="center"
         android:textColor="#707070"
         android:textSize="15sp"

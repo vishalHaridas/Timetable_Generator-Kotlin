@@ -50,6 +50,10 @@ class SignUpActivity : AppCompatActivity() {
         courseSpinner.adapter = ArrayAdapter(
             this, android.R.layout.simple_spinner_item, resources.getStringArray(R.array.Courses))
 
+        majorSpinner.adapter = ArrayAdapter(
+            this, android.R.layout.simple_spinner_item, resources.getStringArray(R.array.bcsMajors)
+        )
+
         initialize()
     }
 
@@ -79,7 +83,7 @@ class SignUpActivity : AppCompatActivity() {
 
 
         if (!TextUtils.isEmpty(firstName) && !TextUtils.isEmpty(email) &&
-            !TextUtils.isEmpty(password) && confPassword.equals(password)
+            !TextUtils.isEmpty(password)
         ) {
             //mProgressBar!!.visibility = View.VISIBLE    //REMOVE IF DOESNT DO ANYTHING
 

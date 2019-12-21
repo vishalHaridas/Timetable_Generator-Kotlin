@@ -73,6 +73,8 @@ class SubjectSelectionAdapter(private val context: Context, subjectArrayList: Ar
 //            Toast.makeText(context, "Checkbox $pos clicked! with subCode: $subName", Toast.LENGTH_SHORT).show()
 
 
+//            public_subjectArrayList = subjectArrayList
+
             if (subjectArrayList[pos].getSelects()) {
                 subjectArrayList[pos].setSelects(false)
                 public_subjectArrayList = subjectArrayList
@@ -93,6 +95,7 @@ class SubjectSelectionAdapter(private val context: Context, subjectArrayList: Ar
     }
 
     companion object {
+//        var public_subjectArrayList: ArrayList<Model> = ArrayList<Model>()
         lateinit var public_subjectArrayList: ArrayList<Model>
     }
 }

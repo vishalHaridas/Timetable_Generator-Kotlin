@@ -82,6 +82,9 @@ public class TimetableGenerator {
     }
 
     public static void updateTimetable(Context ctx) throws IOException{
+
+        classes.clear();
+
 //        src/main/java/com/threeonefour/timetablegenerator/
 //        Scanner = new Scanner(new File(.open("Timetable_AUT2k19.csv")));
         Scanner ttReader = new Scanner(ctx.getAssets().open(String.format("Timetable_AUT2k19.csv")));
@@ -135,6 +138,9 @@ public class TimetableGenerator {
     }
 
     public static void updateCurrentSubjects(){
+
+        semSubs.clear();
+
         String subCode;
         int subIndex = -1;
         Subject temp;
@@ -164,6 +170,9 @@ public class TimetableGenerator {
         int subClassRow;
         String subjCode;
         CClass tempClass;
+
+
+
 
         for (CClass aClass : classes) {
             subjCode = aClass.getSubj();
