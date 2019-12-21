@@ -59,136 +59,7 @@ class DashboardActivity : AppCompatActivity() {
         _db = FirebaseDatabase.getInstance().getReference("Courses/COBSC01")
 //        _StudentsDB = FirebaseDatabase.getInstance().getReference("Students")
 
-        _db.addListenerForSingleValueEvent(object: ValueEventListener{
-            override fun onCancelled(p0: DatabaseError) {
 
-            }
-
-            override fun onDataChange(p0: DataSnapshot) {
-                if (p0.exists()){
-
-                    COURSE_SUBJECT_LIST.clear()
-
-                    val coreSubsList: DataSnapshot = p0.child("core");
-                    val gedSubsList: DataSnapshot = p0.child("gedSubs");
-                    val majorElectiveSubsList: DataSnapshot = p0.child("major/MAMGD01/elective")
-                    val majorSpecializationSubsList: DataSnapshot = p0.child("major/MAMGD01/specialization")
-
-                    for (sub in gedSubsList.children){
-                        val subCode: String? = sub.key;
-                        val subName: String? = sub.child("name").value as String?
-                        val subPrereqList: DataSnapshot = sub.child("prereq")
-
-                        var prereqList: ArrayList<String>? = ArrayList<String>()
-
-                        for (prereq in subPrereqList.children){
-                            val prereqID: String? = prereq.value as String?
-                            if (prereqID != null) {
-                                prereqList?.add(prereqID)
-                            }
-//                            Log.d("DATABASE COURSE PRE SUB", "subcode: $subCode, prereq: $prereqID")
-                        }
-
-                        var subObject: Subject = Subject("$subCode","$subName", false)
-                        subObject.prereqs = prereqList
-
-                        COURSE_SUBJECT_LIST.add(subObject);
-                    }
-
-                    for (sub in coreSubsList.children){
-                        val subCode: String? = sub.key;
-                        val subName: String? = sub.child("name").value as String?
-                        val subPrereqList: DataSnapshot = sub.child("prereq")
-
-                        var prereqList: ArrayList<String>? = ArrayList<String>()
-
-                        for (prereq in subPrereqList.children){
-                            val prereqID: String? = prereq.value as String?
-                            if (prereqID != null) {
-                                prereqList?.add(prereqID)
-                            }
-//                            Log.d("DATABASE COURSE PRE SUB", "subcode: $subCode, prereq: $prereqID")
-                        }
-
-                        var subObject: Subject = Subject("$subCode","$subName", false)
-                        subObject.prereqs = prereqList
-
-                        COURSE_SUBJECT_LIST.add(subObject);
-
-//                        Log.d("DATABASE COURSE SUB", "subcode: ${subObject.code}, prereq: ${subObject.prereqs}")
-                    }
-//                        Log.d("GLOBAL COURSE LIST", "${OURSE_SUBJECT_LIST[0].code}")
-                    for (sub in majorElectiveSubsList.children){
-                        val subCode: String? = sub.key;
-                        val subName: String? = sub.child("name").value as String?
-                        val subPrereqList: DataSnapshot = sub.child("prereq")
-
-                        var prereqList: ArrayList<String>? = ArrayList<String>()
-
-                        for (prereq in subPrereqList.children){
-                            val prereqID: String? = prereq.value as String?
-                            if (prereqID != null) {
-                                prereqList?.add(prereqID)
-                            }
-//                            Log.d("DATABASE COURSE PRE SUB", "subcode: $subCode, prereq: $prereqID")
-                        }
-
-                        var subObject: Subject = Subject("$subCode","$subName", false)
-                        subObject.prereqs = prereqList
-
-                        COURSE_SUBJECT_LIST.add(subObject);
-                    }
-                    for (sub in majorSpecializationSubsList.children){
-                        val subCode: String? = sub.key;
-                        val subName: String? = sub.child("name").value as String?
-                        val subPrereqList: DataSnapshot = sub.child("prereq")
-
-                        var prereqList: ArrayList<String>? = ArrayList<String>()
-
-                        for (prereq in subPrereqList.children){
-                            val prereqID: String? = prereq.value as String?
-                            if (prereqID != null) {
-                                prereqList?.add(prereqID)
-                            }
-//                            Log.d("DATABASE COURSE PRE SUB", "subcode: $subCode, prereq: $prereqID")
-                        }
-
-                        var subObject: Subject = Subject("$subCode","$subName", false)
-                        subObject.prereqs = prereqList
-
-                        COURSE_SUBJECT_LIST.add(subObject);
-                    }
-
-                }
-
-
-                chooseSubButton!!.isEnabled = true
-                TimetableGenerator.subjects = COURSE_SUBJECT_LIST;
-                Log.d("SUBJECTLIST_SIZE", "in the onchange: ${TimetableGenerator.subjects.size}")
-                //region -----------------------------------JAVA BACKEND CALLS------------------------------------
-
-//        TimetableGenerator.subjects = COURSE_SUBJECT_LIST;
-                TimetableGenerator.subjects = COURSE_SUBJECT_LIST;
-//        Log.d("SUBJECTLIST_SIZE", "${TimetableGenerator.subjects.size}")
-
-
-
-
-                TimetableGenerator.subjects = getDatabaseValues().execute().get()
-                TimetableGenerator.updateTimetable(DASHBOARD_CONTEXT)
-                TimetableGenerator.updateCurrentSubjects()
-                TimetableGenerator.addClassesToSubject()
-                if (TimetableGenerator.semSubs.size > 0)
-                    for (i in 0 until TimetableGenerator.semSubs.size)
-                        Log.d("SUBJECTLIST_OBJECT", "${TimetableGenerator.semSubs[i]}")
-
-
-
-
-                /*--------------------------------END OF JAVA CODE---------------------------------*/
-            }
-
-        })
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
@@ -238,6 +109,9 @@ class DashboardActivity : AppCompatActivity() {
 
 
         chooseSubButton!!.isEnabled = false
+
+
+
 
 
 
@@ -415,6 +289,137 @@ class DashboardActivity : AppCompatActivity() {
 
 
 
+        _db.addListenerForSingleValueEvent(object: ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                if (p0.exists()){
+
+                    COURSE_SUBJECT_LIST.clear()
+
+                    val coreSubsList: DataSnapshot = p0.child("core");
+                    val gedSubsList: DataSnapshot = p0.child("gedSubs");
+                    val majorElectiveSubsList: DataSnapshot = p0.child("major/MAMGD01/elective")
+                    val majorSpecializationSubsList: DataSnapshot = p0.child("major/MAMGD01/specialization")
+
+                    for (sub in gedSubsList.children){
+                        val subCode: String? = sub.key;
+                        val subName: String? = sub.child("name").value as String?
+                        val subPrereqList: DataSnapshot = sub.child("prereq")
+
+                        var prereqList: ArrayList<String>? = ArrayList<String>()
+
+                        for (prereq in subPrereqList.children){
+                            val prereqID: String? = prereq.value as String?
+                            if (prereqID != null) {
+                                prereqList?.add(prereqID)
+                            }
+//                            Log.d("DATABASE COURSE PRE SUB", "subcode: $subCode, prereq: $prereqID")
+                        }
+
+                        var subObject: Subject = Subject("$subCode","$subName", false)
+                        subObject.prereqs = prereqList
+
+                        COURSE_SUBJECT_LIST.add(subObject);
+                    }
+
+                    for (sub in coreSubsList.children){
+                        val subCode: String? = sub.key;
+                        val subName: String? = sub.child("name").value as String?
+                        val subPrereqList: DataSnapshot = sub.child("prereq")
+
+                        var prereqList: ArrayList<String>? = ArrayList<String>()
+
+                        for (prereq in subPrereqList.children){
+                            val prereqID: String? = prereq.value as String?
+                            if (prereqID != null) {
+                                prereqList?.add(prereqID)
+                            }
+//                            Log.d("DATABASE COURSE PRE SUB", "subcode: $subCode, prereq: $prereqID")
+                        }
+
+                        var subObject: Subject = Subject("$subCode","$subName", false)
+                        subObject.prereqs = prereqList
+
+                        COURSE_SUBJECT_LIST.add(subObject);
+
+//                        Log.d("DATABASE COURSE SUB", "subcode: ${subObject.code}, prereq: ${subObject.prereqs}")
+                    }
+//                        Log.d("GLOBAL COURSE LIST", "${OURSE_SUBJECT_LIST[0].code}")
+                    for (sub in majorElectiveSubsList.children){
+                        val subCode: String? = sub.key;
+                        val subName: String? = sub.child("name").value as String?
+                        val subPrereqList: DataSnapshot = sub.child("prereq")
+
+                        var prereqList: ArrayList<String>? = ArrayList<String>()
+
+                        for (prereq in subPrereqList.children){
+                            val prereqID: String? = prereq.value as String?
+                            if (prereqID != null) {
+                                prereqList?.add(prereqID)
+                            }
+//                            Log.d("DATABASE COURSE PRE SUB", "subcode: $subCode, prereq: $prereqID")
+                        }
+
+                        var subObject: Subject = Subject("$subCode","$subName", false)
+                        subObject.prereqs = prereqList
+
+                        COURSE_SUBJECT_LIST.add(subObject);
+                    }
+                    for (sub in majorSpecializationSubsList.children){
+                        val subCode: String? = sub.key;
+                        val subName: String? = sub.child("name").value as String?
+                        val subPrereqList: DataSnapshot = sub.child("prereq")
+
+                        var prereqList: ArrayList<String>? = ArrayList<String>()
+
+                        for (prereq in subPrereqList.children){
+                            val prereqID: String? = prereq.value as String?
+                            if (prereqID != null) {
+                                prereqList?.add(prereqID)
+                            }
+//                            Log.d("DATABASE COURSE PRE SUB", "subcode: $subCode, prereq: $prereqID")
+                        }
+
+                        var subObject: Subject = Subject("$subCode","$subName", false)
+                        subObject.prereqs = prereqList
+
+                        COURSE_SUBJECT_LIST.add(subObject);
+                    }
+
+                }
+
+
+                chooseSubButton!!.isEnabled = true
+                TimetableGenerator.subjects = COURSE_SUBJECT_LIST;
+                Log.d("SUBJECTLIST_SIZE", "in the onchange: ${TimetableGenerator.subjects.size}")
+                //region -----------------------------------JAVA BACKEND CALLS------------------------------------
+
+//        TimetableGenerator.subjects = COURSE_SUBJECT_LIST;
+                TimetableGenerator.subjects = COURSE_SUBJECT_LIST;
+//        Log.d("SUBJECTLIST_SIZE", "${TimetableGenerator.subjects.size}")
+
+
+
+
+                TimetableGenerator.subjects = getDatabaseValues().execute().get()
+                TimetableGenerator.updateTimetable(DASHBOARD_CONTEXT)
+                TimetableGenerator.updateCurrentSubjects()
+                TimetableGenerator.addClassesToSubject()
+                if (TimetableGenerator.semSubs.size > 0)
+                    for (i in 0 until TimetableGenerator.semSubs.size)
+                        Log.d("SUBJECTLIST_OBJECT", "${TimetableGenerator.semSubs[i]}")
+
+
+
+
+
+                /*--------------------------------END OF JAVA CODE---------------------------------*/
+            }
+
+        })
 
         mUserReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -436,6 +441,10 @@ class DashboardActivity : AppCompatActivity() {
                         Log.d("COMP_SUB_ID", "$subId")
                         COMPLETED_SUBJECTS.add(subId)
                     }
+
+
+
+
 
 
                 tvSubSelSubheading!!.visibility = View.VISIBLE

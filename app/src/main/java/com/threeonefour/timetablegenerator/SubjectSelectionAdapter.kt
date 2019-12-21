@@ -1,6 +1,7 @@
 package com.threeonefour.timetablegenerator
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -56,6 +57,8 @@ class SubjectSelectionAdapter(private val context: Context, subjectArrayList: Ar
             holder = convertView.tag as ViewHolder
         }
 
+
+//        convertView.background = Color.RED
 
         holder.tvAnimal!!.setText(subjectArrayList[position].getsubName())
 

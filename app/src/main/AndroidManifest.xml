@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".TimeTableClassesActivity"></activity>
+        <activity android:name=".TimeTableViewerActivity"></activity>
+        <activity android:name=".TimeTableClassesActivity" />
         <activity
             android:name=".TimeTableOptionsActivity"
             android:parentActivityName=".SubjectRangeActivity"

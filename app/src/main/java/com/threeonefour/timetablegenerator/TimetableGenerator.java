@@ -1,10 +1,8 @@
 package com.threeonefour.timetablegenerator;
 
-//region Import Statements
 import android.content.Context;
 import android.util.Log;
 
-//region Import Statements
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -16,66 +14,66 @@ import java.io.IOException;
 
 public class TimetableGenerator {
 
-    static ArrayList<Subject>   subjects = new ArrayList<>();//Stores all subjects in the course //get from Vishal
-    static ArrayList<CClass>    classes  = new ArrayList<>();//Stores classes
-    static ArrayList<Subject>   semSubs  = new ArrayList<>();//Stores subjects and class times offered in the semester
-    static ArrayList<Timetable> tts      = new ArrayList<>();
+    static ArrayList<Subject>   subjects =  new ArrayList<>();//Stores all subjects in the course //get from Vishal
+    static ArrayList<CClass>     classes =   new ArrayList<>();//Stores classes
+    static ArrayList<Subject>   semSubs =   new ArrayList<>();//Stores subjects and class times offered in the semester
+    static ArrayList<Timetable> tts = new ArrayList<>();
     static ArrayList<ArrayList<Subject>> combinations = new ArrayList<>();
-    static ArrayList<String>    completedSubCodes = new ArrayList<>();
+    static ArrayList<String> completedSubCodes = new ArrayList<>();
     //static ArrayList<Subject> completedSubs = new ArrayList<>();
 
-    //------MAIN------//
-    public static void main(String[] args) throws IOException, CloneNotSupportedException {
-        completedSubCodes.add("CSIT111");
-        completedSubCodes.add("CSIT113");
-        completedSubCodes.add("CSIT121");
-        completedSubCodes.add("CSIT115");
-        completedSubCodes.add("CSIT128");
-        completedSubCodes.add("CSIT114");
-        completedSubCodes.add("MATH070");
-        completedSubCodes.add("STAT131");
+    //region------MAIN------//
+//    public static void main(String[] args) throws IOException, CloneNotSupportedException {
+//        completedSubCodes.add("CSIT111");
+//        completedSubCodes.add("CSIT113");
+//        completedSubCodes.add("CSIT121");
+//        completedSubCodes.add("CSIT115");
+//        completedSubCodes.add("CSIT128");
+//        completedSubCodes.add("CSIT114");
+//        completedSubCodes.add("MATH070");
+//        completedSubCodes.add("STAT131");
+//
+//        //-----PROGRAM
+//        updateSubjectList();
+//        for (Subject subject : subjects) System.out.println(subject);
+//        System.out.println();
+//
+//        updateTimetable();
+//        for (CClass aClass : classes) {
+//            System.out.println(aClass);
+//        }
+//        System.out.println();
+//
+//        updateCurrentSubjects();
+//        for (Subject semSub : semSubs) { System.out.println(semSub); }
+//        System.out.println();
+//
+//        addClassesToSubject();
+//        for (Subject semSub : semSubs)
+//            for (int j = 0; j < semSub.getClasses().length; j++)
+//                for (int k = 0; k < semSub.getClasses()[j].size(); k++)
+//                    System.out.println(semSub.getClasses()[j].get(k));
+//        System.out.println();
+//
+//        markCompletedSubs();
+//        removeCompletedSubs();
+//        for (int i = 0; i < semSubs.size(); i++) {
+//            System.out.println(semSubs.get(i));
+//        }
+//
+//        removeIneligibleSubs();//might not be working
+//        System.out.println();
+//
+//        int numberOfSubs = 3;//todo remove from android app. replace with num that user selects
+//        genSubCombos(numberOfSubs);//no test required. testing code can be found inside func code
+//
+//        tts = generateTimetables(combinations.get(22));//todo can modify func to directly write to static arraylist
+//        System.out.println(tts.size());
+//        System.out.println(tts.get(1));
+//
+//    }
 
-        //-----PROGRAM
-        updateSubjectList();
-        for (Subject subject : subjects) System.out.println(subject);
-        System.out.println();
-
-        updateTimetable();
-        for (CClass aClass : classes) {
-            System.out.println(aClass);
-        }
-        System.out.println();
-
-        updateCurrentSubjects();
-        for (Subject semSub : semSubs) { System.out.println(semSub); }
-        System.out.println();
-
-        addClassesToSubject();
-        for (Subject semSub : semSubs)
-            for (int j = 0; j < semSub.getClasses().length; j++)
-                for (int k = 0; k < semSub.getClasses()[j].size(); k++)
-                    System.out.println(semSub.getClasses()[j].get(k));
-        System.out.println();
-
-        markCompletedSubs();
-        removeCompletedSubs();
-        for (int i = 0; i < semSubs.size(); i++) {
-            System.out.println(semSubs.get(i));
-        }
-
-        removeIneligibleSubs();//might not be working
-        System.out.println();
-
-        int numberOfSubs = 3;//todo remove from android app. replace with num that user selects
-        genSubCombos(numberOfSubs);//no test required. testing code can be found inside func code
-
-        tts = generateTimetables(combinations.get(22));//todo can modify func to directly write to static arraylist
-        System.out.println(tts.size());
-        System.out.println(tts.get(1));
-
-    }
-
-//-------END OF MAIN-------//
+//endregion-------END OF MAIN-------//
 
     //todo add a way to make it only read if the file version is different from what was previously read
     public static void updateSubjectList() throws IOException{
@@ -92,9 +90,14 @@ public class TimetableGenerator {
         System.out.println("Subject list updated successfully");
     }//works
 
-    public static void updateTimetable() throws IOException{
+    public static void updateTimetable(Context ctx) throws IOException{
+
         classes.clear();
-        Scanner ttReader = new Scanner(new FileReader("src/com/AVK/Files/Timetable_AUT2k19.csv"));
+
+//        src/main/java/com/threeonefour/timetablegenerator/
+//        Scanner = new Scanner(new File(.open("Timetable_AUT2k19.csv")));
+        Scanner ttReader = new Scanner(ctx.getAssets().open(String.format("Timetable_AUT2k19.csv")));
+        Log.d("UPDATE_TIMETABLE", "TEST TEST TEST TESTTESTTEST");
         ttReader.useDelimiter("[,\n]");
         String subCode, roomNum, profName, day, start, end;
         char classType, classCode;
@@ -141,7 +144,7 @@ public class TimetableGenerator {
             classes.add(new CClass(subCode, classType, classCode, roomNum, profName, tempDay, tempStart, tempEnd));
         }
         System.out.println("Classes<> populated successfully");
-    }//works
+    }
 
     public static void updateCurrentSubjects(){
         semSubs.clear();
@@ -520,8 +523,9 @@ public class TimetableGenerator {
         return false;
     }//works
 
-    public static ArrayList<Timetable> generateTimetables(ArrayList<Subject> subs) throws CloneNotSupportedException{
-        ArrayList<Timetable> tts = new ArrayList<>();
+    public static void generateTimetables(ArrayList<Subject> subs) throws CloneNotSupportedException{
+//        ArrayList<Timetable> tts = new ArrayList<>();
+        tts.clear();
         ArrayList<ArrayList<ArrayList<CClass>[]>> brute = new ArrayList<>();
         String s1id, s2id, s3id, s4id;
         Timetable temp = new Timetable();
@@ -567,7 +571,7 @@ public class TimetableGenerator {
             }
         }
 
-        return tts;
+//        return tts;
     }//works
 
     public static String genClassID(ArrayList<CClass> c){
@@ -589,6 +593,7 @@ public class TimetableGenerator {
             }
         }
         System.out.println("Completed subs marked");
+        removeCompletedSubs();
     }//works
 
     public static void removeCompletedSubs(){
@@ -619,6 +624,9 @@ public class TimetableGenerator {
     }//NOT SURE
 
     public static void genSubCombos(int n){
+
+        combinations.clear();
+
         ArrayList<Subject> temp = new ArrayList<Subject>();
         for (int i = 0; i < semSubs.size(); i++) {
             for (int j = 0; j < semSubs.size(); j++) {
