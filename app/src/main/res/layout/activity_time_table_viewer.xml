@@ -3,7 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TimeTableViewerActivity">
+    tools:context=".TimeTableViewerActivity"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/timeTableViewToolbar"
+        layout="@layout/toolbar_dashboard"/>
 
     <me.yaoandy107.ntut_timetable.CourseTableLayout
         android:id="@+id/courseTable"

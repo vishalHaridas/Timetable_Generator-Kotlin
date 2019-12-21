@@ -1,6 +1,7 @@
 package com.threeonefour.timetablegenerator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -21,6 +22,11 @@ public class TimeTableViewerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_table_viewer);
 
+
+        Toolbar timeTableViewToolbar = (Toolbar) findViewById(R.id.timeTableViewToolbar);
+        setSupportActionBar(timeTableViewToolbar);
+//        getActionBar().setDisplayHomeAsUpEnabled(true);
+
         initView();
     }
 
@@ -30,13 +36,27 @@ public class TimeTableViewerActivity extends AppCompatActivity {
         ArrayList<CourseInfo> courseInfoList = new ArrayList<>();
 
         // Add course1 - sample1
+        
+//        for (int i = 0; i < TimetableGenerator.tts.size(); i++){
+//            for (int j = 0; j < TimetableGenerator.tts.get(i).getClasses().size(); j++) {
+//                for (int k = 0; k < TimetableGenerator.tts.get(i).getClasses().get(j).size(); k++) {
+//
+//                }
+//            }
+//        }
+        
+        
         CustomCourseInfo customCourseInfo = new CustomCourseInfo();
-        customCourseInfo.setName("Course 1");
-        customCourseInfo.setCourseTime("1 2", "", "2", "3", "4", "", "");
+        customCourseInfo.setName(TimetableGenerator.tts.get(0).getSubs().get(0));
+        customCourseInfo.setCourseTime("1 2 5 9", "", "2", "3", "4", "", "");
         customCourseInfo.setLoaction("Taipei");
         customCourseInfo.setId("01");
         customCourseInfo.setTeacher("OuO");
         courseInfoList.add(customCourseInfo);
+
+
+//        CustomCourseInfo customCourseInfo = new CustomCourseInfo();
+
 
 //        // Add course1 - sample2
 //        CustomCourseInfo customCourseInfo1 = new CustomCourseInfo();
@@ -100,7 +120,7 @@ public class TimeTableViewerActivity extends AppCompatActivity {
         AlertDialog.Builder courseDialogBuilder = new AlertDialog.Builder(this)
                 .setTitle(courseName)
                 .setMessage(message)
-                .setPositiveButton("Detail", null);
+                .setPositiveButton("Okay", null);
         courseDialogBuilder.show();
     }
 }

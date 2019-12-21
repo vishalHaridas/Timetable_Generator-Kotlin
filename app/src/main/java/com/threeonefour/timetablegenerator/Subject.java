@@ -2,12 +2,15 @@ package com.threeonefour.timetablegenerator;
 
 import java.util.ArrayList;
 
-public class Subject {
-    private String                  code;
-    private String                  subName;
-    private ArrayList<CClass>[]     classes; //row 0 for lec. times, 1 for tut. , 2 for labs
-    private ArrayList<String>       prereqs;
-    private boolean                 isComplete;
+import java.util.ArrayList;
+
+public class Subject implements Comparable<Subject>
+{
+    private String              code;
+    private String              subName;
+    private ArrayList<CClass>[]  classes; //row 0 for lec. times, 1 for tut. , 2 for labs
+    private ArrayList<String>  prereqs;
+    private boolean             isComplete;
 
     //CONSTRUCTORS
     //todo default constructor
@@ -23,6 +26,14 @@ public class Subject {
             classes[i] = new ArrayList<CClass>(1);
         }
         this.prereqs = new ArrayList<String>();
+    }
+
+    public Subject(Subject s1){
+        this.code = s1.code;
+        this.subName = s1.subName;
+        this.isComplete = s1.isComplete;
+        this.classes = s1.getClasses().clone();
+        this.prereqs = new ArrayList(s1.prereqs);
     }
 
     //GETTERS
@@ -43,6 +54,12 @@ public class Subject {
 
     @Override
     public String toString() {
-        return code + " " + subName + " " + classes[0].size();
+        return code + " " + subName;
+    }
+
+
+    @Override
+    public int compareTo(Subject s) {
+        return (this.code.compareTo(s.code));
     }
 }

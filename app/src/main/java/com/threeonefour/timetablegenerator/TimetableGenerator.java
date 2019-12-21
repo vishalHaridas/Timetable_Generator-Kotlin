@@ -1,17 +1,15 @@
 package com.threeonefour.timetablegenerator;
 
-//region Import Statements
 import android.content.Context;
 import android.util.Log;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.File;
-import java.io.FileNotFoundException;
 //endregion
 
 public class TimetableGenerator {
@@ -21,16 +19,27 @@ public class TimetableGenerator {
     static ArrayList<Subject>   semSubs =   new ArrayList<>();//Stores subjects and class times offered in the semester
     static ArrayList<Timetable> tts = new ArrayList<>();
     static ArrayList<ArrayList<Subject>> combinations = new ArrayList<>();
+    static ArrayList<String> completedSubCodes = new ArrayList<>();
+    //static ArrayList<Subject> completedSubs = new ArrayList<>();
 
-//------MAIN------//
+    //region------MAIN------//
 //    public static void main(String[] args) throws IOException, CloneNotSupportedException {
+//        completedSubCodes.add("CSIT111");
+//        completedSubCodes.add("CSIT113");
+//        completedSubCodes.add("CSIT121");
+//        completedSubCodes.add("CSIT115");
+//        completedSubCodes.add("CSIT128");
+//        completedSubCodes.add("CSIT114");
+//        completedSubCodes.add("MATH070");
+//        completedSubCodes.add("STAT131");
+//
 //        //-----PROGRAM
 //        updateSubjectList();
 //        for (Subject subject : subjects) System.out.println(subject);
 //        System.out.println();
 //
 //        updateTimetable();
-//        for (Class aClass : classes) {
+//        for (CClass aClass : classes) {
 //            System.out.println(aClass);
 //        }
 //        System.out.println();
@@ -46,29 +55,29 @@ public class TimetableGenerator {
 //                    System.out.println(semSub.getClasses()[j].get(k));
 //        System.out.println();
 //
-//        //TESTING doesClash(Subject s1, s2)
-////        doesClash(semSubs.get(0), semSubs.get(1));
-////        System.out.println(doesClash(semSubs.get(0), semSubs.get(1)));
+//        markCompletedSubs();
+//        removeCompletedSubs();
+//        for (int i = 0; i < semSubs.size(); i++) {
+//            System.out.println(semSubs.get(i));
+//        }
 //
-//        int numberOfSubs = 3;
-//        subjectCombos(numberOfSubs);
-//        System.out.println(combinations.size());
-//        //TESTING doesClash(ArrayList<Subject> subs)
-//        ArrayList<Subject> subs = new ArrayList<>();
-//        subs.add(semSubs.get(1));
-//        subs.add(semSubs.get(9));
-//        subs.add(semSubs.get(10));
-//        //System.out.println(doesClash(subs));
+//        removeIneligibleSubs();//might not be working
+//        System.out.println();
 //
-//        //tts = generateTimetables(combinations.get(0));
-//        tts = generateTimetables(subs);
-//        System.out.println(tts.get(0));
+//        int numberOfSubs = 3;//todo remove from android app. replace with num that user selects
+//        genSubCombos(numberOfSubs);//no test required. testing code can be found inside func code
+//
+//        tts = generateTimetables(combinations.get(22));//todo can modify func to directly write to static arraylist
+//        System.out.println(tts.size());
+//        System.out.println(tts.get(1));
 //
 //    }
-//-------END OF MAIN-------//
+
+//endregion-------END OF MAIN-------//
 
     //todo add a way to make it only read if the file version is different from what was previously read
     public static void updateSubjectList() throws IOException{
+        subjects.clear();
         Scanner subReader = new Scanner(new FileReader("src/com/AVK/Files/AllSubjects.csv"));
         subReader.useDelimiter("[,\n]");
         String tempCode, tempSubName;
@@ -79,7 +88,7 @@ public class TimetableGenerator {
         }
         subReader.close();
         System.out.println("Subject list updated successfully");
-    }
+    }//works
 
     public static void updateTimetable(Context ctx) throws IOException{
 
@@ -138,9 +147,7 @@ public class TimetableGenerator {
     }
 
     public static void updateCurrentSubjects(){
-
         semSubs.clear();
-
         String subCode;
         int subIndex = -1;
         Subject temp;
@@ -163,16 +170,13 @@ public class TimetableGenerator {
                 }
             }
         }
-//        System.out.println("semSubjects<> populated");
-    }
+        System.out.println("semSubjects<> populated");
+    }//works
 
     public static void addClassesToSubject(){
         int subClassRow;
         String subjCode;
         CClass tempClass;
-
-
-
 
         for (CClass aClass : classes) {
             subjCode = aClass.getSubj();
@@ -200,7 +204,7 @@ public class TimetableGenerator {
             }
         }
         System.out.println("Classes added to semSubjects<>");
-    }
+    }//works
 
     public static boolean doesClash(CClass c1, CClass c2){
         boolean clashes;
@@ -228,7 +232,7 @@ public class TimetableGenerator {
         }
         else { clashes= false; }
         return clashes;
-    }
+    }//works
 
     public static ArrayList<ArrayList<CClass>[]> doesClash(Subject s1, Subject s2){
         boolean impossible = false;
@@ -500,7 +504,7 @@ public class TimetableGenerator {
 
 //        return impossible;
         return workingCombos;
-    }
+    }//works
 
     public static boolean doesClash(ArrayList<Subject> subs){
         boolean clashes = false;
@@ -517,10 +521,11 @@ public class TimetableGenerator {
             }
         }
         return false;
-    }
+    }//works
 
-    public static ArrayList<Timetable> generateTimetables(ArrayList<Subject> subs) throws CloneNotSupportedException{
-        ArrayList<Timetable> tts = new ArrayList<>();
+    public static void generateTimetables(ArrayList<Subject> subs) throws CloneNotSupportedException{
+//        ArrayList<Timetable> tts = new ArrayList<>();
+        tts.clear();
         ArrayList<ArrayList<ArrayList<CClass>[]>> brute = new ArrayList<>();
         String s1id, s2id, s3id, s4id;
         Timetable temp = new Timetable();
@@ -537,15 +542,15 @@ public class TimetableGenerator {
             for (int i = 0; i < brute.get(0).size(); i++) {
                 //s1id=brute.get(0).get(i)[0].toString();
                 //s2id=brute.get(0).get(i)[1].toString();
-                s1id=genID(brute.get(0).get(i)[0]);
-                s2id=genID(brute.get(0).get(i)[1]);
+                s1id=genClassID(brute.get(0).get(i)[0]);
+                s2id=genClassID(brute.get(0).get(i)[1]);
                 for (int j = 0; j < brute.get(1).size(); j++) {
-                    String checkid = genID(brute.get(1).get(j)[0]);
+                    String checkid = genClassID(brute.get(1).get(j)[0]);
                     if(checkid.equals(s1id)){
-                        s3id=genID(brute.get(1).get(j)[1]);
+                        s3id=genClassID(brute.get(1).get(j)[1]);
                         for (int k = 0; k < brute.get(2).size(); k++) {
-                            String checkid2 = genID(brute.get(2).get(k)[0]);
-                            String checkid3 = genID(brute.get(2).get(k)[1]);
+                            String checkid2 = genClassID(brute.get(2).get(k)[0]);
+                            String checkid3 = genClassID(brute.get(2).get(k)[1]);
                             if(checkid2.equals(s2id) && checkid3.equals(s3id)){
                                 //sub 1
                                 temp.getSubs().add(subs.get(0).getCode());
@@ -566,10 +571,10 @@ public class TimetableGenerator {
             }
         }
 
-        return tts;
-    }
+//        return tts;
+    }//works
 
-    public static String genID(ArrayList<CClass> c){
+    public static String genClassID(ArrayList<CClass> c){
         String id = "";
         for (int i = 0; i < c.size(); i++) {
             id+=c.get(i).getCode();
@@ -577,27 +582,83 @@ public class TimetableGenerator {
             id+=c.get(i).getEndTime();
         }
         return id;
-    }
+    }//works
 
-    public static void subjectCombos(int n){
-        ArrayList<Subject> temp = new ArrayList<Subject>();
-        for (int i = 0; i < subjects.size(); i++) {
+    public static void markCompletedSubs(){
+        for (int i = 0; i < completedSubCodes.size(); i++) {
             for (int j = 0; j < subjects.size(); j++) {
+                if(completedSubCodes.get(i).equals(subjects.get(j).getCode())){
+                    subjects.get(j).setComplete(true);
+                }
+            }
+        }
+        System.out.println("Completed subs marked");
+        removeCompletedSubs();
+    }//works
+
+    public static void removeCompletedSubs(){
+        for (int i = 0; i < completedSubCodes.size(); i++) {
+            for (int j = 0; j < semSubs.size(); j++) {
+                if(completedSubCodes.get(i).equals(semSubs.get(j).getCode())){
+                    semSubs.get(j).setComplete(true);
+                    semSubs.remove(j);
+                }
+            }
+        }
+        System.out.println("Completed subs removed");
+    }//works
+
+    public static void removeIneligibleSubs(){
+        for (int i = 0; i < semSubs.size(); i++) {
+            for (int j = 0; j < semSubs.get(i).getPrereqs().size(); j++) {
                 for (int k = 0; k < subjects.size(); k++) {
-                    if(i==j||i==k||j==k){
-                        continue;
-                    } else {
-                        temp.add(subjects.get(i));
-                        temp.add(subjects.get(j));
-                        temp.add(subjects.get(k));
+                    if(semSubs.get(i).getPrereqs().get(j).equals(subjects.get(k).getCode())){
+                        if(!subjects.get(k).isComplete()){
+                            semSubs.remove(i);
+                        }
                     }
                 }
             }
-
-            if(!doesClash(temp)){
-                combinations.add(new ArrayList<>(temp));
-            }
-            temp.clear();
         }
-    }
+        System.out.println("Ineligible subjects removed");
+    }//NOT SURE
+
+    public static void genSubCombos(int n){
+
+        combinations.clear();
+
+        ArrayList<Subject> temp = new ArrayList<Subject>();
+        for (int i = 0; i < semSubs.size(); i++) {
+            for (int j = 0; j < semSubs.size(); j++) {
+                if (i==j) continue;
+                for (int k = 0; k < semSubs.size(); k++) {
+                    if(i==k||j==k){
+                        continue;
+                    } else {
+                        temp.add(semSubs.get(i));
+                        temp.add(semSubs.get(j));
+                        temp.add(semSubs.get(k));
+                        Collections.sort(temp);
+                        if(!doesClash(temp)){
+                            if(!combinations.contains(temp)){
+                                combinations.add(new ArrayList<>(temp));
+                            }
+                        }
+                        temp.clear();
+                    }
+                }
+            }
+        }
+        //region FOR TESTING
+//        int count = 0;
+//        for (int i = 0; i < combinations.size(); i++) {
+//            System.out.print(count + " ");
+//            for (int j = 0; j < combinations.get(i).size(); j++) {
+//                System.out.print(combinations.get(i).get(j).getCode() + " ");
+//            }
+//            count++;
+//            System.out.println();
+//        }
+        //endregion
+    }//works
 }
