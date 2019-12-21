@@ -3,14 +3,15 @@ package com.threeonefour.timetablegenerator;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 
-public class CClass {
+public class CClass
+{
     private String      subj;
     private char        classType;
     private char        code;
     private String      roomNum;
     private String      profName;
-    private DayOfWeek day;
-    private LocalTime startTime;
+    private DayOfWeek   day;
+    private LocalTime   startTime;
     private LocalTime   endTime;
 
     //Constructors
@@ -26,7 +27,7 @@ public class CClass {
     }
 
     public CClass(String subj, char classType, char code, String roomNum, String profName,
-                 DayOfWeek day, LocalTime startTime, LocalTime endTime)
+                  DayOfWeek day, LocalTime startTime, LocalTime endTime)
     {
         this.subj       = subj;
         this.classType  = classType;
@@ -61,15 +62,8 @@ public class CClass {
     //METHODS
     @Override
     public String toString() {
-        return "Class{" +
-                "subj=" + subj +
-                ", classType=" + classType +
-                ", code=" + code +
-                ", roomNum='" + roomNum + '\'' +
-                ", profName='" + profName + '\'' +
-                ", day=" + day +
-                ", startTime=" + startTime +
-                ", endTime=" + endTime +
-                '}';
+        String output = subj + " " + classType + code + ", " + roomNum + ", " + profName + ", "
+                + day + ", Start: " + startTime + ", End: " + endTime;
+        return output;
     }
 }
