@@ -230,7 +230,7 @@ class DashboardActivity : AppCompatActivity() {
             //                if (!bGenTimetable!!.isEnabled){
 //                    Toast.makeText(this@DashboardActivity, "Select Subjects first.",Toast.LENGTH_SHORT).show()
 //                }
-            val intent = Intent(this@DashboardActivity, SubjectRangeActivity::class.java)
+            val intent = Intent(this@DashboardActivity, TimeTableViewerActivity::class.java)
             startActivity(intent)
 //                finish();
 
@@ -238,6 +238,9 @@ class DashboardActivity : AppCompatActivity() {
 
 
         chooseSubButton!!.isEnabled = false
+
+
+
 
 
 

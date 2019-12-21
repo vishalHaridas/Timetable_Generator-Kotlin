@@ -114,10 +114,10 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/genTimetableButton" />-->
 
-    <me.yaoandy107.ntut_timetable.CourseTableLayout
-        android:id="@+id/courseTable"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="@+id/subSelSubTextView" />
+<!--    <me.yaoandy107.ntut_timetable.CourseTableLayout-->
+<!--        android:id="@+id/courseTable"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/dasboardToolbar" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,20 +3,20 @@
     <string name="createaccount"><u>Create new account?</u></string>
 
     <string-array name="Courses">
-<!--        <item>Bachelor of Business Administration</item>-->
-<!--        <item>Bachelor of Commerce</item>-->
+        <!--        <item>Bachelor of Business Administration</item>-->
+        <!--        <item>Bachelor of Commerce</item>-->
         <item>Bachelor of Computer Science</item>
-<!--        <item>Bachelor of IT</item>-->
-<!--        <item>Bachelor of Engineering</item>-->
-<!--        <item>Bachelor of Nursing</item>-->
-<!--        <item>Bachelor of Communication and Media</item>-->
+        <!--        <item>Bachelor of IT</item>-->
+        <!--        <item>Bachelor of Engineering</item>-->
+        <!--        <item>Bachelor of Nursing</item>-->
+        <!--        <item>Bachelor of Communication and Media</item>-->
     </string-array>
 
     <string-array name="bcsMajors">
-<!--        <item>General</item>-->
-<!--        <item>Digital Systems</item>-->
+        <!--        <item>General</item>-->
+        <!--        <item>Digital Systems</item>-->
         <item>Multimedia and Game Development</item>
-<!--        <item>Big Data</item>-->
+        <!--        <item>Big Data</item>-->
     </string-array>
 
     <string-array name="Subjects">
